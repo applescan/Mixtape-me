@@ -1,4 +1,10 @@
 {
+  "name": "mixtapify",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "body-parser": "^1.20.0",
     "cookie-parser": "^1.4.6",
