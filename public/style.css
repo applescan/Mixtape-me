@@ -133,7 +133,7 @@ body {
     z-index: 1;
 }
 
-#spotify-button {
+.spotify-button {
     background-color: #1ed760;
     color: white;
     border-radius: 500px;
@@ -147,7 +147,7 @@ body {
     margin-bottom: 20px;
 }
 
-#spotify-button:hover, #spotify-button:focus, #spotify-button:active {
+.spotify-button:hover, .spotify-button:focus, .spotify-button:active {
     text-decoration: none;
     color: white;
     background-color: #1db954;

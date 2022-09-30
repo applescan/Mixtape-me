@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap" rel="stylesheet">
@@ -16,76 +17,79 @@
 <body>
   <div class="flex-container">
 
-
-
-<!--First page-->
-<div class="container">
-  <div id="login">
-    <a href="/login" class="get-started-button spotify-button">Login with Spotify</a>
-  </div>
-
-
-    <div id="loggedin">
-
-      <!--1st section-->   
-  
-      <div id="user-profile">
+    <!--First page-->
+    <div class="container">
+      <div id="login">
+        <a href="/login" class="get-started-button spotify-button" id="spotify-button">Login with Spotify</a>
       </div>
-      <div id="oauth">
-      </div>
-      <button style="display: none" class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button>
 
-      <br>
 
-      <!--Script to show user name-->
-      <script id="user-profile-template" type="text/x-handlebars-template">
-      <h1>Hey there, {{display_name}} 👋</h1>
+      <div id="loggedin">
+
+        <!--1st section-->
+
+
+
+        <div id="user-profile">
+        </div>
+        <div id="oauth">
+        </div>
+        <button style="display: none" class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh
+          token</button>
+
+        <br>
+
+        <!--Script to show user name-->
+        <script id="user-profile-template" type="text/x-handlebars-template">
+      <h1>Hey there, {{display_name}}👋</h1>
       <h3>Get started by fetching your top tracks!</h3>
       </script>
 
 
-      <!--Pick from these timeframes -->
-      <div class="timeframes">
-      
-          <div class="spotify-button" id="get-top-tracks-short-term">Last Month</div>
+        <!--Pick from these timeframes -->
+        <div class="timeframes">
 
-            <div class="spotify-button" id="get-top-tracks-medium-term">6 Month</div>
+          <div class="spotify-button" id="get-top-tracks-short-term" onclick="getTopTracksShortTerm(access_token)">Last Month</div>
 
-            <div class="spotify-button" id="get-top-tracks-long-term">All Time</div>
+          <div class="spotify-button" id="get-top-tracks-medium-term" onclick="getTopTracksMediumTerm(access_token)">6 Month</div>
+
+          <div class="spotify-button" id="get-top-tracks-long-term" onclick="getTopTracksLongTerm(access_token)">All Time</div>
+
+        </div>
+
+        <br>
+        <br>
+
+
+        <!--Top tracks arrays-->
+        <div>
+          <div id="top-tracks-ShortTerm"></div>
+        </div>
+
+        <div>
+          <div id="top-tracks-MediumTerm"></div>
+        </div>
+
+        <div>
+          <div id="top-tracks-LongTerm"></div>
+        </div>
 
       </div>
-
-      <br>
-      <br>
-      
-
-      <!--Top tracks arrays-->
-      <div>
-        <div id="top-tracks-ShortTerm"></div>
-      </div>
-
-      <div>
-        <div id="top-tracks-MediumTerm"></div>
-      </div>
-
-      <div>
-        <div id="top-tracks-LongTerm"></div>
-      </div>
-
     </div>
+
   </div>
 
 
-<!--Authorization script-->
-<script id="oauth-template" type="text/x-handlebars-template">
+  <!--Authorization script-->
+  <script id="oauth-template" type="text/x-handlebars-template">
 </script>
-</div>
+  </div>
 
-<!--Library scripts-->
-<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <!--Library scripts-->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
-    
+
 
   <script>
     var topTracksShortTerm;
@@ -108,12 +112,12 @@
         return hashParams;
       }
 
-//Placing user information to html ids
+      //Placing user information to html ids
       var userProfileSource = document.getElementById('user-profile-template').innerHTML,
         userProfileTemplate = Handlebars.compile(userProfileSource),
         userProfilePlaceholder = document.getElementById('user-profile');
 
-//Placing authorization tokens to html ids
+      //Placing authorization tokens to html ids
       var oauthSource = document.getElementById('oauth-template').innerHTML,
         oauthTemplate = Handlebars.compile(oauthSource),
         oauthPlaceholder = document.getElementById('oauth');
@@ -124,7 +128,7 @@
         refresh_token = params.refresh_token,
         error = params.error;
 
-        if (error) {
+      if (error) {
         alert('There was an error during the authentication');
       } else {
         if (access_token) {
@@ -185,22 +189,22 @@
           mapOverSongsLongTerm(songsLongTerm);
         }
 
-// Getting top tracks from button click
-        document.getElementById('get-top-tracks-short-term').addEventListener('click', function () {
+        // Getting top tracks from button click
+        document.getElementById('get-top-tracks-short-term')(function () {
           getTopTracksShortTerm(access_token);
         });
 
         const seed_tracks_short_term = ['2rmq49FcJ4U3wh1Z7C9UxE,5NdxiycRi3nP2v7RJoAJIT'];
 
 
-      document.getElementById('get-top-tracks-medium-term').addEventListener('click', function () {
+        document.getElementById('get-top-tracks-medium-term')(function () {
           getTopTracksMediumTerm(access_token);
         });
 
         const seed_tracks_medium_term = ['2rmq49FcJ4U3wh1Z7C9UxE,5NdxiycRi3nP2v7RJoAJIT'];
-      
 
-      document.getElementById('get-top-tracks-long-term').addEventListener('click', function () {
+
+        document.getElementById('get-top-tracks-long-term')(function () {
           getTopTracksLongTerm(access_token);
         });
 
@@ -211,8 +215,8 @@
 
 
 
-// Function to get top tracks (store information in JSON file and displaying in html page)
-function getTopTracksShortTerm(access_token) {
+    // Function to get top tracks (store information in JSON file and displaying in html page)
+    function getTopTracksShortTerm(access_token) {
       $.ajax({
         url: 'https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=5',
         headers: {
@@ -230,7 +234,7 @@ function getTopTracksShortTerm(access_token) {
       });
     }
 
-function getTopTracksMediumTerm(access_token) {
+    function getTopTracksMediumTerm(access_token) {
       $.ajax({
         url: 'https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=5',
         headers: {
@@ -248,7 +252,7 @@ function getTopTracksMediumTerm(access_token) {
       });
     }
 
-function getTopTracksLongTerm(access_token) {
+    function getTopTracksLongTerm(access_token) {
       $.ajax({
         url: 'https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=5',
         headers: {
@@ -266,7 +270,7 @@ function getTopTracksLongTerm(access_token) {
       });
     }
 
-//Mapping information from spotify to hmtl format 
+    //Mapping information from spotify to hmtl format 
     function mapOverSongsShortTerm(songsShortTerm) {
       songsShortTerm.map(function (songShortTerm) {
         var list = `
