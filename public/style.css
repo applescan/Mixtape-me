@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;800&display=swap');
+
+html {
+    max-height: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    background-image: url("bg.jpg");
+    background-size: cover;
+    text-align: center;
+}
+
+.my-div {
+    display: none;
+  }
+
+#login,
+#loggedin {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 500px;
+}
+
+.flex-container {
+    display: flex;
+    color: white;
+}
+
+.container {
+    color: white;
+    text-align: center;
+    flex-wrap: wrap;
+    min-height: max-content;
+}
+
+.hidden {
+    display: none;
+}
+
+#login {
+    margin: auto;
+    padding-top: 15em;
+}
+
+#login h1 {
+    padding: 3em, 0;
+}
+
+
+.timeframes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#top-tracks-ShortTerm,
+#top-tracks-MediumTerm,
+#top-tracks-LongTerm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+@keyframes wiggle {
+
+    0%,
+    7% {
+        transform: rotateZ(0);
+    }
+
+    15% {
+        transform: rotateZ(-15deg);
+    }
+
+    20% {
+        transform: rotateZ(10deg);
+    }
+
+    25% {
+        transform: rotateZ(-10deg);
+    }
+
+    30% {
+        transform: rotateZ(6deg);
+    }
+
+    35% {
+        transform: rotateZ(-4deg);
+    }
+
+    40%,
+    100% {
+        transform: rotateZ(0);
+    }
+}
+
+.frame {
+    width: 330px;
+    height: 300px;
+    margin: auto;
+}
+
+.frame:active,
+.frame:hover {
+    animation: wiggle 3s linear infinite;
+}
+
+.img1 {
+    position: absolute;
+    width: 330px;
+    height: 300px;
+    z-index: 2;
+}
+
+.img2 {
+    position: relative;
+    left: 30px;
+    width: 300px;
+    height: 300px;
+    opacity: 100%;
+    z-index: 1;
+}
+
+#spotify-button {
+    background-color: #1ed760;
+    color: white;
+    border-radius: 500px;
+    font-size: 14px;
+    width: 300px;
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+    cursor: pointer;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+#spotify-button:hover, #spotify-button:focus, #spotify-button:active {
+    text-decoration: none;
+    color: white;
+    background-color: #1db954;
+}
+
+
+.get-started-button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.display-none{
+    display: none;
+ }
