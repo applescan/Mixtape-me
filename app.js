@@ -15,7 +15,7 @@ var cookieParser = require('cookie-parser');
 
 var client_id = '1ad80b0afbc2487182f47218b6cb8b90'; // Your client id
 var client_secret = '84c94f932ab84a839ace2439f81c38f7'; // Your secret
-var redirect_uri = 'https://mixtapify-me.herokuapp.com/callback'; // Your redirect uri
+var redirect_uri = 'https://gorgeous-dango-448563.netlify.app/callback'; // Your redirect uri
 const PORT = process.env.PORT || 3000;
 
 /**
