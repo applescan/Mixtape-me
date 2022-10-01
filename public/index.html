@@ -20,12 +20,12 @@
 
 <!--First page-->
 <div class="container">
-  <div id="login">
+  <div class="login">
     <a href="/login" class="get-started-button spotify-button">Login with Spotify</a>
   </div>
 
 
-    <div id="loggedin">
+    <div class="loggedin">
 
       <!--1st section-->   
   
@@ -142,14 +142,14 @@
             success: function (response) {
               userProfilePlaceholder.innerHTML = userProfileTemplate(response);
 
-              $('#login').hide();
-              $('#loggedin').show();
+              $('.login').hide();
+              $('.loggedin').show();
             }
           });
         } else {
           // render initial screen
-          $('#login').show();
-          $('#loggedin').hide();
+          $('.login').show();
+          $('.loggedin').hide();
         }
 
         document.getElementById('obtain-new-token').addEventListener('click', function () {
