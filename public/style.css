@@ -18,8 +18,8 @@ body {
     display: none;
   }
 
-.login,
-.loggedin {
+#login,
+#loggedin {
     display: none;
     justify-content: center;
     align-items: center;
