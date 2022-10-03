@@ -16,7 +16,7 @@ body {
 
 .my-div {
     display: none;
-  }
+}
 
 #login,
 #loggedin {
@@ -147,7 +147,9 @@ body {
     margin-bottom: 20px;
 }
 
-.spotify-button:hover, .spotify-button:focus, .spotify-button:active {
+.spotify-button:hover,
+.spotify-button:focus,
+.spotify-button:active {
     text-decoration: none;
     color: white;
     background-color: #1db954;
@@ -162,6 +164,24 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.display-none{
+input{
     display: none;
- }
+  }
+  
+  label{
+    display: inline-block;
+    padding: 3px;
+    border: 1px solid #aaa;
+  }
+  
+  label:hover{
+    cursor: pointer;
+  }
+  
+  .display{
+    display: none;
+  }
+  
+  [type=radio]:checked ~ .display{
+    display: block;
+  }
