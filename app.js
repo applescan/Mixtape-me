@@ -163,15 +163,15 @@ app.get("/logout", function (req, res) {
 });
 
 app.get("/about", function(req, res) {
-  res.sendFile('C:/nodeapps/Mixtapify/about.html');
+  res.sendFile('https://github.com/applescan/Mixtapify/blob/main/about.html');
 });
 
 app.get("/privacy", function(req, res) {
-  res.sendFile('C:/nodeapps/Mixtapify/privacy.html');
+  res.sendFile('https://github.com/applescan/Mixtapify/blob/main/privacy.html');
 });
 
 app.get("/contact", function(req, res) {
-  res.sendFile('C:/nodeapps/Mixtapify/contact.html');
+  res.sendFile('https://github.com/applescan/Mixtapify/blob/main/contact.html');
 });
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}...`));
