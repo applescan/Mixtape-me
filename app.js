@@ -17,7 +17,10 @@ var client_id = "1ad80b0afbc2487182f47218b6cb8b90"; // Your client id
 var client_secret = "84c94f932ab84a839ace2439f81c38f7"; // Your secret
 var redirect_uri = "http://localhost:3000/callback"; // Your redirect uri
 const PORT = process.env.PORT || 3000;
+var app = express();
 
+//Serve all files inside the view directory, path relative to where you started node
+app.use(express.static("Mixtapify/views/"));
 
 /**
  * Generates a random string containing numbers and letters
@@ -162,16 +165,17 @@ app.get("/logout", function (req, res) {
   res.redirect("https://accounts.spotify.com/en/logout");
 });
 
-app.get("/about", function(req, res) {
-  res.sendFile('C:/nodeapps/Mixtapify/about.html');
+app.get("/about", (req, res) => {
+  res.sendFile(__dirname + "/views/about.html");
 });
 
 app.get("/privacy", function(req, res) {
-  res.sendFile('C:/nodeapps/Mixtapify/privacy.html');
+  res.sendFile(__dirname + "/views/privacy.html");
 });
 
 app.get("/contact", function(req, res) {
-  res.sendFile('C:/nodeapps/Mixtapify/contact.html');
+  res.sendFile(__dirname + "/views/contact.html");
 });
 
+module.exports = app;
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}...`));
