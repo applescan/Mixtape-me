@@ -8,13 +8,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png" />
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="style.css" />
   <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
-  <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <!--<script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>-->
+  <!--<script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
 </head>
 
 <body>
+ <!--<div id="html-content-holder" style="background-color: #F0F0F1; color: #00cc65; width: 500px;
+        padding-left: 25px; padding-top: 10px;">
+        <strong>Codepedia.info</strong><hr/>
+        <h3 style="color: #3e4b51;">
+            Html to canvas, and canvas to proper image
+        </h3>
+        <p style="color: #3e4b51;">
+            <b>Codepedia.info</b> is a programming blog. Tutorials focused on Programming ASP.Net,
+            C#, jQuery, AngularJs, Gridview, MVC, Ajax, Javascript, XML, MS SQL-Server, NodeJs,
+            Web Design, Software</p>
+        <p style="color: #3e4b51;">
+            <b>html2canvas</b> script allows you to take "screenshots" of webpages or parts
+            of it, directly on the users browser. The screenshot is based on the DOM and as
+            such may not be 100% accurate to the real representation.
+        </p>
+    </div>
+    <input id="btn-Preview-Image" type="button" value="Preview"/>
+    <a id="btn-Convert-Html2Image" href="#">Download</a>
+    <br/>
+    <h3>Preview :</h3>
+    <div id="previewImage">
+    </div>
+
+    <script>
+      $(document).ready(function(){
+      
+        
+      var element = $("#html-content-holder"); // global variable
+      var getCanvas; // global variable
+       
+          $("#btn-Preview-Image").on('click', function () {
+               html2canvas(element, {
+               onrendered: function (canvas) {
+                      $("#previewImage").append(canvas);
+                      getCanvas = canvas;
+                   }
+               });
+          });
+      
+        $("#btn-Convert-Html2Image").on('click', function () {
+          var imgageData = getCanvas.toDataURL("image/png");
+          // Now browser starts downloading it instead of just showing it
+          var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+          $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
+        });
+      
+      });
+      
+      </script>-->
+
   <div class="flex-container">
     <!--First page-->
     <div class="container">
@@ -29,8 +81,7 @@
         </div>
 
         <!--App logo-->
-
-        <a href="/"><img src="logo.png" alt="Logo" style="height: 100px" /></a>
+        <a href="/"><img src="logo.png" class="logo" alt="Logo"></a>
         <p>
           Throwback to the 90's with Mixtape-me! Share your top 5 songs in a
           mixtape form 💿
@@ -70,15 +121,11 @@
 
         <!--Script to show user name-->
         <script id="user-profile-template" type="text/x-handlebars-template">
-            <br />
-            <br />
             <br>
             <br>
-            <a href="/"><img
-                src="logo.png"
-                alt="Logo"
-                style="height: 100px;"
-              /></a>
+            <br>
+            <br>
+            <a href="/" ><img src="logo.png" alt="Logo" class="logo"></a>
             <h2>Hey there, {{display_name}}👋</h2>
             <h4>Get started by fetching your top tracks, Click the save button to save this and share your mixtape! 🔗</h4>
           </script>
@@ -130,8 +177,6 @@
     <script id="oauth-template" type="text/x-handlebars-template"></script>
   </div>
 
-  <!--Library scripts-->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
 
   <script>
     var topTracksShortTerm;
@@ -289,7 +334,7 @@
     function mapOverSongsShortTerm(songsShortTerm) {
       songsShortTerm.map(function (songShortTerm) {
         var list = `
-          <div>
+          <div class="cd">
           <div class="frame">
           <a target="_blank" href="${songShortTerm.external_urls.spotify}"> 
           <img class="img1" src="/case.png">
@@ -317,7 +362,7 @@
     function mapOverSongsMediumTerm(songsMediumTerm) {
       songsMediumTerm.map(function (songMediumTerm) {
         var list = `
-          <div>
+          <div class="cd">
           <div class="frame">
           <a target="_blank" href="${songMediumTerm.external_urls.spotify}"> 
           <img class="img1" src="/case.png">
@@ -345,7 +390,7 @@
     function mapOverSongsLongTerm(songsLongTerm) {
       songsLongTerm.map(function (songLongTerm) {
         var list = `
-          <div>
+          <div class="cd">
           <div class="frame">
           <a target="_blank" href="${songLongTerm.external_urls.spotify}"> 
           <img class="img1" src="/case.png">
