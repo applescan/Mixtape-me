@@ -7,65 +7,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png" />
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
   <link rel="stylesheet" href="style.css" />
   <!--<script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>-->
   <!--<script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
 </head>
 
 <body>
- <!--<div id="html-content-holder" style="background-color: #F0F0F1; color: #00cc65; width: 500px;
-        padding-left: 25px; padding-top: 10px;">
-        <strong>Codepedia.info</strong><hr/>
-        <h3 style="color: #3e4b51;">
-            Html to canvas, and canvas to proper image
-        </h3>
-        <p style="color: #3e4b51;">
-            <b>Codepedia.info</b> is a programming blog. Tutorials focused on Programming ASP.Net,
-            C#, jQuery, AngularJs, Gridview, MVC, Ajax, Javascript, XML, MS SQL-Server, NodeJs,
-            Web Design, Software</p>
-        <p style="color: #3e4b51;">
-            <b>html2canvas</b> script allows you to take "screenshots" of webpages or parts
-            of it, directly on the users browser. The screenshot is based on the DOM and as
-            such may not be 100% accurate to the real representation.
-        </p>
-    </div>
-    <input id="btn-Preview-Image" type="button" value="Preview"/>
-    <a id="btn-Convert-Html2Image" href="#">Download</a>
-    <br/>
-    <h3>Preview :</h3>
-    <div id="previewImage">
-    </div>
-
-    <script>
-      $(document).ready(function(){
-      
-        
-      var element = $("#html-content-holder"); // global variable
-      var getCanvas; // global variable
-       
-          $("#btn-Preview-Image").on('click', function () {
-               html2canvas(element, {
-               onrendered: function (canvas) {
-                      $("#previewImage").append(canvas);
-                      getCanvas = canvas;
-                   }
-               });
-          });
-      
-        $("#btn-Convert-Html2Image").on('click', function () {
-          var imgageData = getCanvas.toDataURL("image/png");
-          // Now browser starts downloading it instead of just showing it
-          var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
-          $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
-        });
-      
-      });
-      
-      </script>-->
 
   <div class="flex-container">
     <!--First page-->
@@ -87,8 +43,9 @@
           mixtape form 💿
         </p>
         <a href="/login" class="login-spotify-button">Login with Spotify</a>
+
+        <!--Footer-->
         <footer>
-          <!--Footer-->
           <img src="spotify.png" alt="Logo" style="height: 40px; margin-bottom: 10px" />
           <p>
             Created by
@@ -99,6 +56,7 @@
       </div>
 
       <div id="loggedin">
+
         <!--Top menu-->
         <div class="topnav" id="myTopnav">
           <a href="/">Home</a>
@@ -129,6 +87,10 @@
             <h2>Hey there, {{display_name}}👋</h2>
             <h4>Get started by fetching your top tracks, Click the save button to save this and share your mixtape! 🔗</h4>
           </script>
+        <button id="button" class="takepic-button">[ ʕ •ᴥ•ʔ Save Image ]</button>
+        <br>
+        <br>
+
 
         <!--Pick from these timeframes -->
         <div class="timeframes">
@@ -142,202 +104,205 @@
 
         <!--Top tracks arrays-->
 
-        <section>
-          <input type="radio" id="div1" name="tab-nav" checked />
-          <div class="display">
-            <div id="top-tracks-ShortTerm"></div>
-          </div>
-        </section>
+        <div id="capture" style="background-image:url('bg.jpg')">
+          <section>
+            <input type="radio" id="div1" name="tab-nav" checked />
+            <div class="display">
+              <div id="top-tracks-ShortTerm"></div>
+            </div>
+          </section>
 
-        <section>
-          <input type="radio" id="div2" name="tab-nav" />
-          <div class="display">
-            <div id="top-tracks-MediumTerm"></div>
-          </div>
-        </section>
+          <section>
+            <input type="radio" id="div2" name="tab-nav" />
+            <div class="display">
+              <div id="top-tracks-MediumTerm"></div>
+            </div>
+          </section>
 
-        <section>
-          <input type="radio" id="div3" name="tab-nav" />
-          <div class="display">
-            <div id="top-tracks-LongTerm"></div>
-          </div>
-        </section>
+          <section>
+            <input type="radio" id="div3" name="tab-nav" />
+            <div class="display">
+              <div id="top-tracks-LongTerm"></div>
+            </div>
+          </section>
 
-        <img src="spotify.png" alt="Logo" style="height: 40px; margin-bottom: 10px" />
-        <p>
-          Created by
-          <a target="_blank" href="https://www.feliciadigitaldesign.art/"><u>Felicia Fel</u></a>
-          | © Mixtape-me 2023 🚀
-        </p>
-        <br>
+          <a href="/"><img src="logo.png" alt="Logo" style="height: 40px;" /></a>
+          <span> X </span>
+          <!--Footer-->
+          <img src="spotify.png" alt="Logo" style="height: 30px; margin-bottom: 10px" />
+          <p style="color: #fff;">
+            Created by
+            <a target="_blank" href="https://www.feliciadigitaldesign.art/"><u>Felicia Fel</u></a>
+            | © Mixtape-me 2023 🚀
+          </p>
+          <br>
+        </div>
       </div>
+
+      <!--Authorization script-->
+      <script id="oauth-template" type="text/x-handlebars-template"></script>
     </div>
 
-    <!--Authorization script-->
-    <script id="oauth-template" type="text/x-handlebars-template"></script>
-  </div>
 
+    <script>
+      var topTracksShortTerm;
+      var topTracksMediumTerm;
+      var topTracksLongTerm;
 
-  <script>
-    var topTracksShortTerm;
-    var topTracksMediumTerm;
-    var topTracksLongTerm;
-
-    (function () {
-      /**
-       * Obtains parameters from the hash of the URL
-       * @return Object
-       */
-      function getHashParams() {
-        var hashParams = {};
-        var e,
-          r = /([^&;=]+)=?([^&;]*)/g,
-          q = window.location.hash.substring(1);
-        while ((e = r.exec(q))) {
-          hashParams[e[1]] = decodeURIComponent(e[2]);
+      (function () {
+        /**
+         * Obtains parameters from the hash of the URL
+         * @return Object
+         */
+        function getHashParams() {
+          var hashParams = {};
+          var e,
+            r = /([^&;=]+)=?([^&;]*)/g,
+            q = window.location.hash.substring(1);
+          while ((e = r.exec(q))) {
+            hashParams[e[1]] = decodeURIComponent(e[2]);
+          }
+          return hashParams;
         }
-        return hashParams;
-      }
 
-      //Placing user information to html ids
-      var userProfileSource = document.getElementById(
-        "user-profile-template"
-      ).innerHTML,
-        userProfileTemplate = Handlebars.compile(userProfileSource),
-        userProfilePlaceholder = document.getElementById("user-profile");
+        //Placing user information to html ids
+        var userProfileSource = document.getElementById(
+          "user-profile-template"
+        ).innerHTML,
+          userProfileTemplate = Handlebars.compile(userProfileSource),
+          userProfilePlaceholder = document.getElementById("user-profile");
 
-      //Placing authorization tokens to html ids
-      var oauthSource = document.getElementById("oauth-template").innerHTML,
-        oauthTemplate = Handlebars.compile(oauthSource),
-        oauthPlaceholder = document.getElementById("oauth");
+        //Placing authorization tokens to html ids
+        var oauthSource = document.getElementById("oauth-template").innerHTML,
+          oauthTemplate = Handlebars.compile(oauthSource),
+          oauthPlaceholder = document.getElementById("oauth");
 
-      var params = getHashParams();
+        var params = getHashParams();
 
-      var access_token = params.access_token,
-        refresh_token = params.refresh_token,
-        error = params.error;
+        var access_token = params.access_token,
+          refresh_token = params.refresh_token,
+          error = params.error;
 
-      if (error) {
-        alert("There was an error during the authentication");
-      } else {
-        if (access_token) {
-          $.ajax({
-            url: "https://api.spotify.com/v1/me",
-            headers: {
-              Authorization: "Bearer " + access_token,
-            },
-            success: function (response) {
-              userProfilePlaceholder.innerHTML =
-                userProfileTemplate(response);
-
-              $("#login").hide();
-              $("#loggedin").show();
-              getTopTracksShortTerm(access_token);
-              getTopTracksMediumTerm(access_token);
-              getTopTracksLongTerm(access_token);
-            },
-          });
+        if (error) {
+          alert("There was an error during the authentication");
         } else {
-          // render initial screen
-          $("#login").show();
-          $("#loggedin").hide();
-        }
+          if (access_token) {
+            $.ajax({
+              url: "https://api.spotify.com/v1/me",
+              headers: {
+                Authorization: "Bearer " + access_token,
+              },
+              success: function (response) {
+                userProfilePlaceholder.innerHTML =
+                  userProfileTemplate(response);
 
-        if (localStorage.getItem("songsShortTerm") != null) {
-          var songsShortTerm = JSON.parse(
-            localStorage.getItem("songsShortTerm")
-          );
-          console.log(songsShortTerm);
-          mapOverSongsShortTerm(songsShortTerm);
-        }
+                $("#login").hide();
+                $("#loggedin").show();
+                getTopTracksShortTerm(access_token);
+                getTopTracksMediumTerm(access_token);
+                getTopTracksLongTerm(access_token);
+              },
+            });
+          } else {
+            // render initial screen
+            $("#login").show();
+            $("#loggedin").hide();
+          }
 
-        if (localStorage.getItem("songsMediumTerm") != null) {
-          var songsMediumTerm = JSON.parse(
-            localStorage.getItem("songsMediumTerm")
-          );
-          console.log(songsMediumTerm);
-          mapOverSongsMediumTerm(songsMediumTerm);
-        }
+          if (localStorage.getItem("songsShortTerm") != null) {
+            var songsShortTerm = JSON.parse(
+              localStorage.getItem("songsShortTerm")
+            );
+            console.log(songsShortTerm);
+            mapOverSongsShortTerm(songsShortTerm);
+          }
 
-        if (localStorage.getItem("songsLongTerm") != null) {
-          var songsLongTerm = JSON.parse(
-            localStorage.getItem("songsLongTerm")
-          );
-          console.log(songsLongTerm);
-          mapOverSongsLongTerm(songsLongTerm);
+          if (localStorage.getItem("songsMediumTerm") != null) {
+            var songsMediumTerm = JSON.parse(
+              localStorage.getItem("songsMediumTerm")
+            );
+            console.log(songsMediumTerm);
+            mapOverSongsMediumTerm(songsMediumTerm);
+          }
+
+          if (localStorage.getItem("songsLongTerm") != null) {
+            var songsLongTerm = JSON.parse(
+              localStorage.getItem("songsLongTerm")
+            );
+            console.log(songsLongTerm);
+            mapOverSongsLongTerm(songsLongTerm);
+          }
         }
+      })();
+
+      // Function to get top tracks (store information in JSON file and displaying in html page)
+      function getTopTracksShortTerm(access_token) {
+        $.ajax({
+          url: "https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=5",
+          headers: {
+            Authorization: "Bearer " + access_token,
+          },
+          success: function (response) {
+            topTracksShortTerm = response;
+
+            var songsShortTerm = topTracksShortTerm.items;
+            console.log(songsShortTerm);
+            localStorage.setItem(
+              "songsShortTerm",
+              JSON.stringify(songsShortTerm)
+            );
+            mapOverSongsShortTerm(songsShortTerm);
+          },
+        });
       }
-    })();
 
-    // Function to get top tracks (store information in JSON file and displaying in html page)
-    function getTopTracksShortTerm(access_token) {
-      $.ajax({
-        url: "https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=5",
-        headers: {
-          Authorization: "Bearer " + access_token,
-        },
-        success: function (response) {
-          topTracksShortTerm = response;
+      function getTopTracksMediumTerm(access_token) {
+        $.ajax({
+          url: "https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=5",
+          headers: {
+            Authorization: "Bearer " + access_token,
+          },
+          success: function (response) {
+            topTracksMediumTerm = response;
 
-          var songsShortTerm = topTracksShortTerm.items;
-          console.log(songsShortTerm);
-          localStorage.setItem(
-            "songsShortTerm",
-            JSON.stringify(songsShortTerm)
-          );
-          mapOverSongsShortTerm(songsShortTerm);
-        },
-      });
-    }
+            var songsMediumTerm = topTracksMediumTerm.items;
+            console.log(songsMediumTerm);
+            localStorage.setItem(
+              "songsMediumTerm",
+              JSON.stringify(songsMediumTerm)
+            );
+            mapOverSongsMediumTerm(songsMediumTerm);
+          },
+        });
+      }
 
-    function getTopTracksMediumTerm(access_token) {
-      $.ajax({
-        url: "https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=5",
-        headers: {
-          Authorization: "Bearer " + access_token,
-        },
-        success: function (response) {
-          topTracksMediumTerm = response;
+      function getTopTracksLongTerm(access_token) {
+        $.ajax({
+          url: "https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=5",
+          headers: {
+            Authorization: "Bearer " + access_token,
+          },
+          success: function (response) {
+            topTracksLongTerm = response;
 
-          var songsMediumTerm = topTracksMediumTerm.items;
-          console.log(songsMediumTerm);
-          localStorage.setItem(
-            "songsMediumTerm",
-            JSON.stringify(songsMediumTerm)
-          );
-          mapOverSongsMediumTerm(songsMediumTerm);
-        },
-      });
-    }
+            var songsLongTerm = topTracksLongTerm.items;
+            console.log(songsLongTerm);
+            localStorage.setItem(
+              "songsLongTerm",
+              JSON.stringify(songsLongTerm)
+            );
+            mapOverSongsLongTerm(songsLongTerm);
+          },
+        });
+      }
 
-    function getTopTracksLongTerm(access_token) {
-      $.ajax({
-        url: "https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=5",
-        headers: {
-          Authorization: "Bearer " + access_token,
-        },
-        success: function (response) {
-          topTracksLongTerm = response;
-
-          var songsLongTerm = topTracksLongTerm.items;
-          console.log(songsLongTerm);
-          localStorage.setItem(
-            "songsLongTerm",
-            JSON.stringify(songsLongTerm)
-          );
-          mapOverSongsLongTerm(songsLongTerm);
-        },
-      });
-    }
-
-    //Mapping information from spotify to hmtl format
-    function mapOverSongsShortTerm(songsShortTerm) {
-      songsShortTerm.map(function (songShortTerm) {
-        var list = `
+      //Mapping information from spotify to hmtl format
+      function mapOverSongsShortTerm(songsShortTerm) {
+        songsShortTerm.map(function (songShortTerm) {
+          var list = `
           <div class="cd">
           <div class="frame">
           <a target="_blank" href="${songShortTerm.external_urls.spotify}"> 
-          <img class="img1" src="/case.png">
           <img class="img2" src="${songShortTerm.album.images[1].url}"></a>
           </div>
 
@@ -355,17 +320,16 @@
         </div>
           `;
 
-        document.getElementById("top-tracks-ShortTerm").innerHTML += list;
-      });
-    }
+          document.getElementById("top-tracks-ShortTerm").innerHTML += list;
+        });
+      }
 
-    function mapOverSongsMediumTerm(songsMediumTerm) {
-      songsMediumTerm.map(function (songMediumTerm) {
-        var list = `
+      function mapOverSongsMediumTerm(songsMediumTerm) {
+        songsMediumTerm.map(function (songMediumTerm) {
+          var list = `
           <div class="cd">
           <div class="frame">
           <a target="_blank" href="${songMediumTerm.external_urls.spotify}"> 
-          <img class="img1" src="/case.png">
           <img class="img2" src="${songMediumTerm.album.images[1].url}"></a>
           </div>
 
@@ -383,17 +347,16 @@
         </div>
           `;
 
-        document.getElementById("top-tracks-MediumTerm").innerHTML += list;
-      });
-    }
+          document.getElementById("top-tracks-MediumTerm").innerHTML += list;
+        });
+      }
 
-    function mapOverSongsLongTerm(songsLongTerm) {
-      songsLongTerm.map(function (songLongTerm) {
-        var list = `
+      function mapOverSongsLongTerm(songsLongTerm) {
+        songsLongTerm.map(function (songLongTerm) {
+          var list = `
           <div class="cd">
           <div class="frame">
           <a target="_blank" href="${songLongTerm.external_urls.spotify}"> 
-          <img class="img1" src="/case.png">
           <img class="img2" src="${songLongTerm.album.images[1].url}"></a>
           </div>
 
@@ -411,10 +374,23 @@
         </div>
           `;
 
-        document.getElementById("top-tracks-LongTerm").innerHTML += list;
-      });
-    }
-  </script>
+          document.getElementById("top-tracks-LongTerm").innerHTML += list;
+        });
+      }
+    </script>
+
+    <!--Script for dom-to-image-->
+    <script>
+      $(document).ready(function () {
+        $("#button").click(function () {
+          domtoimage.toBlob(document.getElementById('capture'))
+            .then(function (blob) {
+              window.saveAs(blob, "Mixtape-me.jpg")
+            })
+        })
+      })
+    </script>
+
 </body>
 
 </html>

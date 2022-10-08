@@ -74,6 +74,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  padding-top: 50px;
 }
 
 @keyframes wiggle {
@@ -113,6 +114,8 @@ body {
   width: 330px;
   height: 300px;
   margin: auto;
+  background-image: url("case.png");
+  z-index: 2;
 }
 
 .frame:active,
@@ -120,18 +123,19 @@ body {
   animation: wiggle 3s linear infinite;
 }
 
-.img1 {
+/*.img1 {
   position: absolute;
   width: 330px;
   height: 300px;
   z-index: 2;
-}
+}*/
 
 .img2 {
   position: relative;
-  left: 30px;
-  width: 300px;
-  height: 300px;
+  left: 20px;
+  top: 12px;
+  width: 290px;
+  height: 290px;
   opacity: 100%;
   z-index: 1;
 }
@@ -141,6 +145,21 @@ body {
   color: white;
   border-radius: 500px;
   font-size: 14px;
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  padding: 10px 50px 10px 50px;
+}
+
+.takepic-button {
+  background-color: black;
+  border: #fff 2px solid;
+  color: #fff;
+  border-radius: 500px;
+  font-size: 14px;
+  font-weight: 600;
   width: 300px;
   text-align: center;
   cursor: pointer;
@@ -176,6 +195,14 @@ body {
   background-color: #bdffd4;
 }
 
+.takepic-button:hover,
+.takepic-button:focus,
+.takepic-button:active {
+  text-decoration: none;
+  color: #bdffd4;
+  border: #bdffd4 2px solid;
+}
+
 input {
   display: none;
 }
@@ -198,8 +225,8 @@ label:hover {
   display: block;
 }
 
-.about{
-  text-align: center; 
+.about {
+  text-align: center;
   font-size: 50px;
   margin-top: 10%;
 }
@@ -274,10 +301,11 @@ a:focus {
   h2 {
     font-size: 22px;
   }
-  h4{
+
+  h4 {
     font-size: 15px;
   }
-  
+
   .spotify-button {
     font-size: 12px;
     width: 100px;
@@ -293,14 +321,14 @@ a:focus {
     height: 130px;
     margin: auto;
   }
-  
+
   .img1 {
     position: absolute;
     width: 150px;
     height: 130px;
     z-index: 2;
   }
-  
+
   .img2 {
     position: relative;
     left: 20px;
@@ -310,12 +338,12 @@ a:focus {
     z-index: 1;
   }
 
-  .cd{
+  .cd {
     width: 150px;
     font-size: 12px;
   }
 
-  .about{
+  .about {
     font-size: 40px;
     margin-top: 30%;
   }
