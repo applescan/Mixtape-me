@@ -391,7 +391,7 @@
         $("#button").click(function () {
           domtoimage.toBlob(document.getElementById('capture'))
             .then(function (blob) {
-              window.saveAs(blob, "Mixtape-me.jpg")
+              window.saveAs(blob, "Mixtape-me.png")
             })
         })
       })
