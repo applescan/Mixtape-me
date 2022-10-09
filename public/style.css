@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
 html {
   max-height: auto;
@@ -12,6 +13,10 @@ body {
   background-image: url("bg.jpg");
   background-size: cover;
   text-align: center;
+}
+
+h2{
+  font-family: 'Orbitron', sans-serif;
 }
 
 .logo {
@@ -112,7 +117,7 @@ body {
 
 .frame {
   width: 330px;
-  height: 300px;
+  height: 290px;
   margin: auto;
   background-image: url("case.png");
   z-index: 2;
@@ -123,19 +128,12 @@ body {
   animation: wiggle 3s linear infinite;
 }
 
-/*.img1 {
-  position: absolute;
-  width: 330px;
-  height: 300px;
-  z-index: 2;
-}*/
-
 .img2 {
   position: relative;
-  left: 20px;
+  left: 15px;
   top: 12px;
   width: 290px;
-  height: 290px;
+  height: 270px;
   opacity: 100%;
   z-index: 1;
 }
@@ -219,6 +217,7 @@ label:hover {
 
 .display {
   display: none;
+  margin: auto;
 }
 
 [type="radio"]:checked~.display {
@@ -284,6 +283,13 @@ a:focus {
 }
 
 @media only screen and (max-width: 700px) {
+
+  body {
+    background-image: url("bg.jpg");
+    background-size: cover;
+    text-align: center;
+  }
+
   .logo {
     margin-top: 10%;
     height: 70px;
@@ -318,22 +324,18 @@ a:focus {
 
   .frame {
     width: 150px;
-    height: 130px;
+    height: 132px;
     margin: auto;
-  }
-
-  .img1 {
-    position: absolute;
-    width: 150px;
-    height: 130px;
+    background-image: url("case2.png");
     z-index: 2;
   }
 
   .img2 {
     position: relative;
-    left: 20px;
+    top: 4px;
+    left: 8px;
     width: 130px;
-    height: 130px;
+    height: 125px;
     opacity: 100%;
     z-index: 1;
   }
