@@ -215,25 +215,25 @@
             $("#loggedin").hide();
           }
 
-          if (localStorage.getItem("songsShortTerm") != null) {
+          if (sessionStorage.getItem("songsShortTerm") != null) {
             var songsShortTerm = JSON.parse(
-              localStorage.getItem("songsShortTerm")
+              sessionStorage.getItem("songsShortTerm")
             );
             console.log(songsShortTerm);
             mapOverSongsShortTerm(songsShortTerm);
           }
 
-          if (localStorage.getItem("songsMediumTerm") != null) {
+          if (sessionStorage.getItem("songsMediumTerm") != null) {
             var songsMediumTerm = JSON.parse(
-              localStorage.getItem("songsMediumTerm")
+              sessionStorage.getItem("songsMediumTerm")
             );
             console.log(songsMediumTerm);
             mapOverSongsMediumTerm(songsMediumTerm);
           }
 
-          if (localStorage.getItem("songsLongTerm") != null) {
+          if (sessionStorage.getItem("songsLongTerm") != null) {
             var songsLongTerm = JSON.parse(
-              localStorage.getItem("songsLongTerm")
+              sessionStorage.getItem("songsLongTerm")
             );
             console.log(songsLongTerm);
             mapOverSongsLongTerm(songsLongTerm);
@@ -253,7 +253,7 @@
 
             var songsShortTerm = topTracksShortTerm.items;
             console.log(songsShortTerm);
-            localStorage.setItem(
+            sessionStorage.setItem(
               "songsShortTerm",
               JSON.stringify(songsShortTerm)
             );
@@ -273,7 +273,7 @@
 
             var songsMediumTerm = topTracksMediumTerm.items;
             console.log(songsMediumTerm);
-            localStorage.setItem(
+            sessionStorage.setItem(
               "songsMediumTerm",
               JSON.stringify(songsMediumTerm)
             );
@@ -293,7 +293,7 @@
 
             var songsLongTerm = topTracksLongTerm.items;
             console.log(songsLongTerm);
-            localStorage.setItem(
+            sessionStorage.setItem(
               "songsLongTerm",
               JSON.stringify(songsLongTerm)
             );
