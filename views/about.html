@@ -6,9 +6,10 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <link rel="icon" type="image/png" sizes="32x32" href="../public/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <script src="/script.js"></script>
 </head>
 
 <body>
@@ -19,7 +20,7 @@
     <a href="/privacy">Privacy Policy</a>
     <a href="/contact">Contact</a>
     <a href="/about" class="active">About</a>
-    <a href="/logout">Logout</a>
+    <a href="/" onclick="spotifyLogout()">Logout</a>
   </div>
 
   <div class="container">
@@ -43,7 +44,9 @@
       How to save my mixtape?
     </h3>
     <p>
-      Click the download button underneath the mixtapes. Or simply take a screenshot 📱
+      Click the download button on top of the mixtapes, wait for a little bit and the file should be downloaded to your device. 
+      Sometimes it takes multiple downloads for the image to load properly, 
+      so if your first image download doesn't turn out right, please redownload the image, or simply take a screenshot 📱
     </p>
     <h3>
       The app isn't working.
@@ -52,18 +55,18 @@
       If the app doesn't work, try clearing your cookies and site data for mixtape-me.herokuapp.com, or
       try a different device.
     </p>
-<br>
-<br>
+    <br>
+    <br>
   </div>
-  <a href="/"><img src="logo.png" alt="Logo" style="height: 40px;" /></a>
-  <span> X </span>
   <!--Footer-->
-  <img src="spotify.png" alt="Logo" style="height: 30px; margin-bottom: 10px" />
-  <p style="color: #fff;">
+  <a href="/"><img src="logo.png" alt="Logo" style="height: 40px;" /></a>
+  <p style="color: #fff; font-size: 15px;">
+    mixtape-me.herokuapp.com | © 2023 🚀
+    <br>
     Created by
     <a target="_blank" href="https://www.feliciadigitaldesign.art/"><u>Felicia Fel</u></a>
-    | © Mixtape-me 2023 🚀
   </p>
+  <img src="spotify.png" alt="Logo" style="height: 30px; margin-bottom: 10px" />
   <br>
   <br>
 </body>

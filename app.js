@@ -15,7 +15,7 @@ var cookieParser = require("cookie-parser");
 
 var client_id = "1ad80b0afbc2487182f47218b6cb8b90"; // Your client id
 var client_secret = "84c94f932ab84a839ace2439f81c38f7"; // Your secret
-var redirect_uri = "https://mixtapify-me.herokuapp.com/callback"; // Your redirect uri
+var redirect_uri = "https://mixtape-me.herokuapp.com/callback"; // Your redirect uri
 const PORT = process.env.PORT || 3000;
 var app = express();
 
@@ -53,7 +53,7 @@ app.get("/login", function (req, res) {
 
   // your application requests authorization
   var scope =
-    "user-read-private user-read-email user-top-read playlist-read-private";
+    "user-top-read";
   res.redirect(
     "https://accounts.spotify.com/authorize?" +
       querystring.stringify({
@@ -161,9 +161,6 @@ app.get("/refresh_token", function (req, res) {
   });
 });
 
-app.get("/logout", function (req, res) {
-  res.redirect("https://accounts.spotify.com/en/logout");
-});
 
 app.get("/about", (req, res) => {
   res.sendFile(__dirname + "/views/about.html");
