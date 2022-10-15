@@ -1,5 +1,5 @@
 ### Links
-Visit https://mixtapify-me.herokuapp.com to access the web application.
+Visit https://mixtape-me.herokuapp.com to access the web application.
 
 ### To install on your local 
 - Clone the repository: git clone
@@ -12,8 +12,8 @@ Visit https://mixtapify-me.herokuapp.com to access the web application.
 ### As a user I can:
 - Log in with my spotify account
 - Access my top 5 mixtapes
+- Choose from "last month", "Last 6 months", and "This year" top tracks
 - Download mixtapes images
 
 ### Limitations/ToDos:
-- Make logout menu redirect to homepage
 - Downloaded image background not showing up on first download (only on iphone), but if you click the months button multiple times then the downloaded image will download as normal
