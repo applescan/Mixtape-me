@@ -15,7 +15,7 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-h2{
+h2 {
   font-family: 'Orbitron', sans-serif;
 }
 
@@ -341,8 +341,6 @@ a:focus {
 
   .img2 {
     position: relative;
-    top: 4px;
-    left: 8px;
     width: 130px;
     height: 125px;
     opacity: 100%;
