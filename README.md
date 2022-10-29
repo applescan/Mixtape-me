@@ -19,5 +19,3 @@ Visit https://mixtape-me.herokuapp.com to access the web application.
 - If you run locally don't foget to change app.js line 18 to: var redirect_uri = "http://localhost:3000/callback";
 - Go to localhost:3000 and get started!
 
-### Limitations/ToDos:
-- Downloaded image background not showing up on first download (only on iphone), but if you click the months button multiple times then the downloaded image will download as normal
