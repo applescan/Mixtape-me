@@ -68,7 +68,7 @@
         </footer>
       </div>
 
-      <div id="loggedin" style="background-image:url('pc-bg.gif'); background-size: contain;">
+      <div id="loggedin" style="background-image:url('bg.gif'); background-size: contain;">
 
         <!--Top menu-->
         <div class="topnav" id="myTopnav">
@@ -88,7 +88,7 @@
           Obtain new token using the refresh token
         </button>
 
-        <br />
+        <br>
 
         <!--Script to show user name-->
         <script id="user-profile-template" type="text/x-handlebars-template">
@@ -98,7 +98,7 @@
             <br>
             <a href="/" ><img src="logo.png" alt="Logo" class="logo"></a>
             <h2>Hey there, {{display_name}} 🎃</h2>
-            <h4>Get started by fetching your top tracks, Click the save button to save this and share your mixtape! 🔗</h4>
+            <h4>Get started by fetching your top tracks, Click the save button to save this and share your mixtape!</h4>
           </script>
         <button id="button" class="takepic-button">[ ʕ •ᴥ•ʔ Save Image ]</button>
         <br>
@@ -117,7 +117,7 @@
 
         <!--Top tracks arrays-->
 
-        <div id="capture" style="background-image:url('pc-bg.gif')">
+        <div id="capture" style="background-image:url('bg.gif'); background-size: contain;">
           <section>
             <input type="radio" id="div1" name="tab-nav" checked />
             <div class="display">
@@ -329,7 +329,7 @@
           <div>
           <b>${songShortTerm.name}</b> by
           <b>${songShortTerm.artists[0].name}</b>
-          from the album <br>
+          from the album 
           <b>${songShortTerm.album.name}</b>
           <br>
           <br> 
@@ -356,7 +356,7 @@
           <div>
           <b>${songMediumTerm.name}</b> by
           <b>${songMediumTerm.artists[0].name}</b>
-          from the album <br>
+          from the album 
           <b>${songMediumTerm.album.name}</b>
           <br>
           <br> 
@@ -383,7 +383,7 @@
           <div>
           <b>${songLongTerm.name}</b> by
           <b>${songLongTerm.artists[0].name}</b>
-          from the album <br>
+          from the album 
           <b>${songLongTerm.album.name}</b>
           <br>
           <br> 

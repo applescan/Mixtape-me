@@ -26,8 +26,6 @@ h2 {
 #login,
 #loggedin {
   display: none;
-  justify-content: center;
-  align-items: center;
 }
 
 .text-overflow {
@@ -47,6 +45,7 @@ h2 {
   text-align: center;
   flex-wrap: wrap;
   min-height: max-content;
+  margin: auto;
 }
 
 .hidden {
@@ -54,15 +53,15 @@ h2 {
 }
 
 #login {
-  margin: auto;
+  margin: 5%;
   padding-top: 9.5em;
   max-height: fit-content;
 }
 
 #login>p {
   font-size: 20px;
-  font-weight: 800;
-  margin-top: 5%;
+  font-weight: 600;
+  padding-top: 5%;
   margin-bottom: 5%;
 }
 
@@ -294,10 +293,16 @@ a:focus {
   display: none;
 }
 
+.pages {
+  text-align: left;
+  margin: 5%;
+  padding: 0 5%;
+}
+
 @media only screen and (max-width: 700px) {
 
   body {
-    background-image: url("bg.gif");
+    background-image: url("pc-bg.gif");
     background-size: cover;
     text-align: center;
   }
@@ -312,8 +317,9 @@ a:focus {
   }
 
   #login>p {
-    font-size: 18px;
-    margin-top: 0%;
+    font-size: 17px;
+    margin-top: 5%;
+    text-align: justify;
   }
 
   h2 {
