@@ -53,7 +53,7 @@ h2 {
 }
 
 #login {
-  margin: 5%;
+  margin: 3%;
   padding-top: 9.5em;
   max-height: fit-content;
 }
@@ -61,7 +61,7 @@ h2 {
 #login>p {
   font-size: 20px;
   font-weight: 600;
-  padding-top: 5%;
+  padding-top: 2%;
   margin-bottom: 5%;
 }
 
@@ -309,7 +309,7 @@ a:focus {
 
   .logo {
     margin-top: 10%;
-    height: 70px;
+    height: 18vw;
   }
 
   #login {
@@ -317,8 +317,8 @@ a:focus {
   }
 
   #login>p {
-    font-size: 17px;
-    margin-top: 5%;
+    font-size: 14px;
+    margin-top: 3%;
     text-align: justify;
   }
 
