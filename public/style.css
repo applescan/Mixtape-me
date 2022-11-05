@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  background-image: url("pc-bg.gif");
+  background-image: url("bg.jpg");
   background-size: cover;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
@@ -140,7 +140,7 @@ h2 {
 }
 
 .spotify-button {
-  background-color: #881EE4;
+  background-color: #1ed760;
   color: white;
   border-radius: 500px;
   font-size: 14px;
@@ -151,6 +151,7 @@ h2 {
   margin-bottom: 20px;
   padding: 10px 50px 10px 50px;
 }
+
 
 .takepic-button {
   background-color: black;
@@ -185,13 +186,7 @@ h2 {
 
 .spotify-button:hover,
 .spotify-button:focus,
-.spotify-button:active {
-  text-decoration: none;
-  color: #881EE4;
-  background-color: #dbbcf5;
-}
-
-
+.spotify-button:active,
 .login-spotify-button:hover,
 .login-spotify-button:focus,
 .login-spotify-button:active {
@@ -204,8 +199,8 @@ h2 {
 .takepic-button:focus,
 .takepic-button:active {
   text-decoration: none;
-  color: #dbbcf5;
-  border: #dbbcf5 2px solid;
+  color: #bdffd4;
+  border: #bdffd4 2px solid;
 }
 
 input {
@@ -285,7 +280,7 @@ a:focus {
 }
 
 .topnav a.active {
-  background-color: #F4831B;
+  background-color: #1ed760;
   color: white;
 }
 
@@ -302,7 +297,7 @@ a:focus {
 @media only screen and (max-width: 700px) {
 
   body {
-    background-image: url("pc-bg.gif");
+    background-image: url("bg.jpg");
     background-size: cover;
     text-align: center;
   }
