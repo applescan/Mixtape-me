@@ -304,7 +304,7 @@ a:focus {
 
   .logo {
     margin-top: 10%;
-    height: 18vw;
+    height: 14vw;
   }
 
   #login {
@@ -318,11 +318,11 @@ a:focus {
   }
 
   h2 {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   h4 {
-    font-size: 15px;
+    font-size: 13px;
   }
 
   .spotify-button {
