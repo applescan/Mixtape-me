@@ -360,12 +360,18 @@ a:focus {
   }
 
   .about {
-    font-size: 40px;
+    font-size: 35px;
     margin-top: 30%;
   }
 
   .container {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .pages {
+    text-align: left;
+    margin: 5%;
+    padding: 0;
   }
 }
