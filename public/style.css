@@ -13,10 +13,21 @@ body {
   background-size: cover;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  color: white;
 }
 
 h2 {
   font-family: 'Orbitron', sans-serif;
+}
+
+.h2,
+h2 {
+  font-size: 1.5rem;
+}
+
+.h4,
+h4 {
+  font-size: 1rem;
 }
 
 .logo {
@@ -26,6 +37,7 @@ h2 {
 #login,
 #loggedin {
   display: none;
+  margin: 0 10%;
 }
 
 .text-overflow {
@@ -40,12 +52,36 @@ h2 {
   color: white;
 }
 
-.container {
-  color: white;
-  text-align: center;
-  flex-wrap: wrap;
-  min-height: max-content;
-  margin: auto;
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;
+  /* Footer height */
+}
+
+.navbar-brand {
+  padding-top: var(--bs-navbar-brand-padding-y);
+  padding-bottom: var(--bs-navbar-brand-padding-y);
+  margin-right: var(--bs-navbar-brand-margin-end);
+  margin-left: var(--bs-navbar-brand-margin-end);
+  font-size: var(--bs-navbar-brand-font-size);
+  color: var(--bs-navbar-brand-color);
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .hidden {
@@ -53,16 +89,20 @@ h2 {
 }
 
 #login {
-  margin: 3%;
-  padding-top: 9.5em;
-  max-height: fit-content;
+  margin: 0;
 }
 
-#login>p {
+.main {
+  display: block;
+  height: 50vh;
+  color: white;
   font-size: 20px;
   font-weight: 600;
-  padding-top: 2%;
-  margin-bottom: 5%;
+  padding-top: 8%;
+}
+
+.home-content {
+  padding-bottom: 4%;
 }
 
 .timeframes {
@@ -129,6 +169,7 @@ h2 {
 .cd {
   width: 330px;
   text-align: center;
+  font-size: 14px;
 }
 
 .img2 {
@@ -179,9 +220,9 @@ h2 {
   text-transform: capitalize;
   margin-bottom: 20px;
   padding: 10px 50px 10px 50px;
-  position: absolute;
-  top: 60%;
-  transform: translate(-50%, -50%);
+  /* position: absolute; */
+  /* top: 60%; */
+  /* transform: translate(-50%, -50%); */
 }
 
 .spotify-button:hover,
@@ -229,24 +270,37 @@ label:hover {
 .about {
   text-align: center;
   font-size: 50px;
-  margin-top: 6%;
 }
 
 p {
   font-size: 16px;
 }
 
-footer {
-  position: fixed;
-  right: 0;
-  bottom: 10%;
-  left: 0;
-  text-align: center;
+#footer {
+  position: absolute;
+  bottom: 20px;
   width: 100%;
-  height: 50px;
-  color: #fff;
-  font-size: 1.5rem;
-  cursor: pointer;
+  height: 5.5rem;
+}
+
+#footer2,
+#footer3 {
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  height: 5.5rem;
+}
+
+#footer>img,
+#footer2>img,
+#footer3>img {
+  height: 40px;
+  padding-bottom: 10px;
+}
+
+#footer>p,
+#footer2>p {
+  font-size: 13px;
 }
 
 a:hover,
@@ -256,36 +310,12 @@ a:focus {
   text-decoration: none;
 }
 
-.topnav {
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: auto;
-}
-
-.topnav a {
-  float: left;
+.tracks {
   display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 25px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #1ed760;
+  height: 50vh;
   color: white;
-}
-
-.topnav .icon {
-  display: none;
+  font-weight: 600;
+  margin: 5% 0;
 }
 
 .pages {
@@ -300,15 +330,27 @@ a:focus {
     background-image: url("bg.jpg");
     background-size: cover;
     text-align: center;
+    color: white;
+  }
+
+  #login,
+  #loggedin {
+    display: none;
+    margin: 0;
   }
 
   .logo {
-    margin-top: 10%;
-    height: 14vw;
+    height: 18vw;
   }
 
-  #login {
-    padding-top: 12em;
+  .h2,
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .h4,
+  h4 {
+    font-size: 0.8rem;
   }
 
   #login>p {
@@ -317,12 +359,34 @@ a:focus {
     text-align: justify;
   }
 
-  h2 {
-    font-size: 20px;
+  */ h2 {
+    font-size: 22px;
   }
 
   h4 {
     font-size: 15px;
+  }
+
+  .main {
+    display: block;
+    height: 50vh;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 30%;
+    margin: 10%;
+  }
+
+  .top-logo {
+    margin: 10% 0;
+  }
+
+  .tracks {
+    display: block;
+    height: 50vh;
+    color: white;
+    font-weight: 600;
+    margin: 10%;
   }
 
   .spotify-button {
@@ -336,14 +400,14 @@ a:focus {
   }
 
   .frame {
-    width: 150px;
+    width: 130px;
     height: 132px;
     margin: auto;
     z-index: 2;
   }
 
   p {
-    font-size: 15px;
+    font-size: 12px;
   }
 
   .img2 {
@@ -355,13 +419,13 @@ a:focus {
   }
 
   .cd {
-    width: 150px;
-    font-size: 12px;
+    width: 130px;
+    font-size: 9px;
   }
 
   .about {
-    font-size: 30px;
-    margin-top: 30%;
+    font-size: 35px;
+    /* margin-top: 30%; */
   }
 
   .container {
@@ -373,5 +437,28 @@ a:focus {
     text-align: left;
     margin: 5%;
     padding: 0;
+  }
+
+  #footer {
+    position: absolute;
+    bottom: 20px;
+    width: 80vw;
+    height: 4.5rem;
+    text-align: center;
+  }
+
+  #footer2 {
+    position: absolute;
+    bottom: 100px;
+    height: 4.5rem;
+    text-align: center;
+  }
+
+  #footer3 {
+    position: relative;
+    bottom: 0;
+    height: 5.5rem;
+    text-align: center;
+    margin: 10% 0;
   }
 }
