@@ -4,14 +4,14 @@ function spotifyLogout() {
   setTimeout(function () { spotifyLogoutWindow.close() }, 2000);
 }
 
-document.getElementById('screenshotButton').addEventListener('click', () => {
-  const captureElement = document.getElementById('capture');
+// document.getElementById('screenshotButton').addEventListener('click', () => {
+//   const captureElement = document.getElementById('capture');
   
-  html2canvas(captureElement).then(canvas => {
-      let link = document.createElement('a');
-      link.download = 'mixtape.png';
-      link.href = canvas.toDataURL();
-      link.click();
-  });
-});
+//   html2canvas(captureElement).then(canvas => {
+//       let link = document.createElement('a');
+//       link.download = 'mixtape.png';
+//       link.href = canvas.toDataURL();
+//       link.click();
+//   });
+// });
 
