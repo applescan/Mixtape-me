@@ -31,10 +31,10 @@
     crossorigin="anonymous"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
   <link rel="stylesheet" href="style.css" />
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-  <script src="/script.js"></script>
+  <script type="module" src="/script.js"></script>
 </head>
 
 <body>
@@ -127,9 +127,9 @@
             </div>
             <br>
             <h2>Hey there, {{display_name}} 👋</h2>
-            <!-- <h4>Get started by fetching your top tracks, Click the save button to save this and share your mixtape!</h4> -->
+            <h4>Get started by fetching your top tracks, Click the save button to save this and share your mixtape!</h4>
           </script>
-          <!-- <button id="screenshotButton" class="takepic-button">[ ʕ •ᴥ•ʔ Save Image ]</button> -->
+          <button id="screenshotButton" class="takepic-button">[ ʕ •ᴥ•ʔ Save Image ]</button>
 
 
 
@@ -195,9 +195,6 @@
     </div>
   </div>
 
-  <!-- script for html2canvas -->
-  <!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-  <script src="/script.js"></script> -->
 
   <script>
     var topTracksShortTerm;
@@ -428,15 +425,6 @@
 
         document.getElementById("top-tracks-LongTerm").innerHTML += list;
       });
-    }
-  </script>
-
-  <script>
-
-    function spotifyLogout() {
-      const url = 'https://accounts.spotify.com/en/logout '
-      const spotifyLogoutWindow = window.open(url, 'Spotify Logout', 'width=700,height=500,top=40,left=40')
-      setTimeout(() => spotifyLogoutWindow.close(), 2000)
     }
   </script>
 

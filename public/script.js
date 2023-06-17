@@ -4,14 +4,17 @@ function spotifyLogout() {
   setTimeout(function () { spotifyLogoutWindow.close() }, 2000);
 }
 
-// document.getElementById('screenshotButton').addEventListener('click', () => {
-//   const captureElement = document.getElementById('capture');
-  
-//   html2canvas(captureElement).then(canvas => {
-//       let link = document.createElement('a');
-//       link.download = 'mixtape.png';
-//       link.href = canvas.toDataURL();
-//       link.click();
-//   });
-// });
 
+// Added event listener to "downloadButton"
+document.getElementById('screenshotButton').addEventListener('click', () => {
+  domtoimage.toPng(document.getElementById('capture'))
+    .then(function (dataUrl) {
+      let link = document.createElement('a');
+      link.download = 'Mixtape-me.png';
+      link.href = dataUrl;
+      link.click();
+    })
+    .catch(function (error) {
+        console.error('oops, something went wrong!', error);
+    });
+});
