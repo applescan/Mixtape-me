@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+html {
+  max-height: auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("/images/bg.jpg");
+  background-size: cover;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+}
+
+h2 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.h2,
+h2 {
+  font-size: 1.5rem;
+}
+
+.h4,
+h4 {
+  font-size: 1rem;
+}
+
+.logo {
+  height: 100px;
+}
+
+#login,
+#loggedin {
+  display: none;
+  margin: 0 10%;
+}
+
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 500px;
+}
+
+.flex-container {
+  display: flex;
+  color: white;
+}
+
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;
+  /* Footer height */
+}
+
+.navbar-brand {
+  padding-top: var(--bs-navbar-brand-padding-y);
+  padding-bottom: var(--bs-navbar-brand-padding-y);
+  margin-right: var(--bs-navbar-brand-margin-end);
+  margin-left: var(--bs-navbar-brand-margin-end);
+  font-size: var(--bs-navbar-brand-font-size);
+  color: var(--bs-navbar-brand-color);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.hidden {
+  display: none;
+}
+
+#login {
+  margin: 0;
+}
+
+.main {
+  display: block;
+  height: 50vh;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 8%;
+}
+
+.home-content {
+  padding-bottom: 4%;
+}
+
+.timeframes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#top-tracks-ShortTerm,
+#top-tracks-MediumTerm,
+#top-tracks-LongTerm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-top: 50px;
+}
+
+@keyframes wiggle {
+
+  0%,
+  7% {
+    transform: rotateZ(0);
+  }
+
+  15% {
+    transform: rotateZ(-15deg);
+  }
+
+  20% {
+    transform: rotateZ(10deg);
+  }
+
+  25% {
+    transform: rotateZ(-10deg);
+  }
+
+  30% {
+    transform: rotateZ(6deg);
+  }
+
+  35% {
+    transform: rotateZ(-4deg);
+  }
+
+  40%,
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
+.frame {
+  width: 330px;
+  height: 290px;
+  margin: auto;
+  z-index: 2;
+}
+
+.frame:active,
+.frame:hover {
+  animation: wiggle 3s linear infinite;
+}
+
+.cd {
+  width: 330px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.img2 {
+  position: relative;
+  width: 290px;
+  height: 270px;
+  opacity: 100%;
+  z-index: 1;
+}
+
+.spotify-button {
+  background-color: #1ed760;
+  color: white;
+  border-radius: 500px;
+  font-size: 14px;
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  padding: 10px 50px 10px 50px;
+}
+
+
+.takepic-button {
+  background-color: black;
+  border: #fff 2px solid;
+  color: #fff;
+  border-radius: 500px;
+  font-size: 14px;
+  font-weight: 600;
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  padding: 10px 50px 10px 50px;
+}
+
+.login-spotify-button {
+  background-color: #1ed760;
+  color: white;
+  border-radius: 500px;
+  font-size: 14px;
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  padding: 10px 50px 10px 50px;
+  /* position: absolute; */
+  /* top: 60%; */
+  /* transform: translate(-50%, -50%); */
+}
+
+.spotify-button:hover,
+.spotify-button:focus,
+.spotify-button:active,
+.login-spotify-button:hover,
+.login-spotify-button:focus,
+.login-spotify-button:active {
+  text-decoration: none;
+  color: #1ed760;
+  background-color: #bdffd4;
+}
+
+.takepic-button:hover,
+.takepic-button:focus,
+.takepic-button:active {
+  text-decoration: none;
+  color: #bdffd4;
+  border: #bdffd4 2px solid;
+}
+
+input {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  padding: 3px;
+  border: 1px solid #aaa;
+}
+
+label:hover {
+  cursor: pointer;
+}
+
+.display {
+  display: none;
+  margin: auto;
+}
+
+[type="radio"]:checked~.display {
+  display: block;
+}
+
+.about {
+  text-align: center;
+  font-size: 50px;
+}
+
+p {
+  font-size: 16px;
+}
+
+#footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  height: 5.5rem;
+}
+
+#footer2,
+#footer3 {
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  height: 5.5rem;
+}
+
+#footer>img,
+#footer2>img,
+#footer3>img {
+  height: 40px;
+  padding-bottom: 10px;
+}
+
+#footer>p,
+#footer2>p,
+#footer3>p {
+  font-size: 13px;
+}
+
+a:hover,
+a,
+a:focus {
+  color: white;
+  text-decoration: none;
+}
+
+.tracks {
+  display: block;
+  height: 50vh;
+  color: white;
+  font-weight: 600;
+  margin: 5% 0;
+}
+
+.pages {
+  text-align: center;
+  margin: 5%;
+  padding: 0 5%;
+}
+
+@media only screen and (max-width: 700px) {
+
+  body {
+    background-image: url("/images/bg.jpg");
+    background-size: cover;
+    text-align: center;
+    color: white;
+  }
+
+  #login,
+  #loggedin {
+    display: none;
+    margin: 0;
+  }
+
+  .logo {
+    height: 18vw;
+  }
+
+  .h2,
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .h4,
+  h4 {
+    font-size: 0.8rem;
+  }
+
+  #login>p {
+    font-size: 14px;
+    margin-top: 3%;
+    text-align: justify;
+  }
+
+  */ h2 {
+    font-size: 22px;
+  }
+
+  h4 {
+    font-size: 15px;
+  }
+
+  .main {
+    display: block;
+    height: 50vh;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 30%;
+    margin: 10%;
+  }
+
+  .tracks {
+    display: block;
+    height: 50vh;
+    color: white;
+    font-weight: 600;
+    margin: 10%;
+  }
+
+  .spotify-button {
+    font-size: 12px;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+
+  .frame {
+    width: 130px;
+    height: 132px;
+    margin: auto;
+    z-index: 2;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  .img2 {
+    position: relative;
+    width: 130px;
+    height: 125px;
+    opacity: 100%;
+    z-index: 1;
+  }
+
+  .cd {
+    width: 130px;
+    font-size: 9px;
+  }
+
+  .about {
+    font-size: 35px;
+    /* margin-top: 30%; */
+  }
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .pages {
+    text-align: center;
+    margin: 5%;
+    padding: 0;
+  }
+
+  #footer {
+    position: absolute;
+    bottom: 20px;
+    width: 80vw;
+    height: 4.5rem;
+    text-align: center;
+  }
+
+  #footer2 {
+    position: absolute;
+    bottom: 100px;
+    height: 4.5rem;
+    text-align: center;
+  }
+
+  #footer3 {
+    position: relative;
+    bottom: 0;
+    height: 5.5rem;
+    text-align: center;
+    margin-top: 30%;
+    margin-bottom: 15%;
+  }
+}
