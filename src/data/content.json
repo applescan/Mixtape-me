@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "title": "Mixtape-me",
+    "description": "Mixtape-me aims to recreate the experience of walking through the doors of a record store looking at CD covers and store walls with colourful albums, memorabilia, and photos, transferring the same experience in a digital form and sharing your mixtape with your friends! Using Spotify's technology, it has never been easier to find out who you listen to the most all year round, last 6 months or even this year. It is a web application built by Felicia Fel.",
+    "ogUrl": "https://mixtape-me.herokuapp.com/",
+    "ogType": "website",
+    "ogTitle": "Mixtape-me",
+    "ogImage": "/images/thumbnail.png"
+  },
+  "home": {
+    "tagline": "Throwback to the 90's with Mixtape-me! Share your top 5 songs in a mixtape form 💿",
+    "loginButton": "Login with Spotify",
+    "greeting": "Hey there, {{username}} 👋",
+    "screenshotButton": "[ ʕ •ᴥ•ʔ Save Image ]",
+    "timeframes": {
+      "short": "Last Month",
+      "medium": "6 Month",
+      "long": "All Time"
+    },
+    "mixtapeHeadings": {
+      "short": "My Mixtape this month 🥳:",
+      "medium": "My Mixtape for the last 6 month 👯:",
+      "long": "My Mixtape this year 🪩:"
+    }
+  },
+  "about": {
+    "title": "About",
+    "content": "Mixtape-me is an open source app that sorts your top 5 tracks and make it into a mixtape. All you need to do is login to Spotify and mixtape-me will sort your top tracks according to your listening history on your Spotify account.",
+    "topTracksTitle": "How are the top tracks determined?",
+    "topTracksContent": "Mixtape-me uses your listening history from your Spotify account. All the data is provided by Spotify."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "content": "Mixtape-me is an open source app that is developed individualy. By choosing to use this app, you agree to the use of your Spotify account username and data for your top 5 tracks.\n\nNo data is used by the app is stored or collected in any way or form. Mixtape-me works by only by simply displaying your top 5 tracks from Spotify."
+  },
+  "contact": {
+    "title": "Contact",
+    "content": "Flick me an email at feliu.ren@gmail.com or dm me on Instagram @applescan. I really appreciate any type of feedbacks and suggestions. You can also check out my other projects at",
+    "portfolioLabel": "my website",
+    "portfolioUrl": "https://felicia-portfolio.netlify.app/"
+  },
+  "footer": {
+    "copyright": "mixtape-me.herokuapp.com | © 2023 🛸",
+    "creator": "Created by",
+    "portfolioUrl": "https://felicia-portfolio.netlify.app/",
+    "portfolioLabel": "Felicia Fel"
+  },
+  "nav": {
+    "privacy": "Privacy Policy",
+    "contact": "Contact",
+    "about": "About"
+  }
+}

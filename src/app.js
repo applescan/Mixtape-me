@@ -16,9 +16,14 @@ const config = require('./config/config');
 
 // Import routes
 const routes = require('./routes');
+const contentRoutes = require('./routes/content');
 
 // Create Express app
 const app = express();
+
+// Configure view engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views/templates'));
 
 // Configure middleware
 app
@@ -28,5 +33,6 @@ app
 
 // Configure routes
 app.use('/', routes);
+app.use('/', contentRoutes);
 
 module.exports = app;
