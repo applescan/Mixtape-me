@@ -41,8 +41,7 @@
   body {
     background-image: radial-gradient(circle at top, rgba(16, 166, 255, 0.18), transparent 48%),
       radial-gradient(circle at 20% 20%, rgba(255, 107, 181, 0.18), transparent 40%),
-      linear-gradient(160deg, rgba(247, 248, 251, 0.96), rgba(238, 241, 247, 0.96)),
-      url("/images/bg.jpg");
+      linear-gradient(160deg, rgba(247, 248, 251, 0.96), rgba(238, 241, 247, 0.96));
   }
 }
 
@@ -65,8 +64,7 @@ body {
   text-align: center;
   background-image: radial-gradient(circle at top, rgba(125, 249, 255, 0.25), transparent 48%),
     radial-gradient(circle at 20% 20%, rgba(255, 139, 210, 0.25), transparent 40%),
-    linear-gradient(160deg, rgba(11, 13, 20, 0.95), rgba(15, 20, 36, 0.95)),
-    url("/images/bg.jpg");
+    linear-gradient(160deg, rgba(11, 13, 20, 0.95), rgba(15, 20, 36, 0.95));
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -279,14 +277,11 @@ a:focus {
   width: 230px;
   height: 230px;
   margin: 0 auto;
-  padding: 18px;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(10, 14, 26, 0.6) 0 24%,
-      rgba(255, 255, 255, 0.15) 24% 25%, rgba(10, 14, 26, 0.8) 25% 100%),
-    conic-gradient(from 120deg, rgba(125, 249, 255, 0.25), rgba(255, 139, 210, 0.25), rgba(77, 245, 167, 0.25), rgba(125, 249, 255, 0.25));
-  border: 1px solid var(--stroke-strong);
-  box-shadow: var(--shadow-sm);
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   display: flex;
   align-items: center;
@@ -297,16 +292,16 @@ a:focus {
 .frame:active,
 .frame:hover {
   animation: wiggle 3s linear infinite;
-  box-shadow: var(--shadow-md);
+  box-shadow: none;
 }
 
 .img2 {
-  width: 75%;
-  height: 75%;
-  border-radius: 16px;
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
   object-fit: cover;
   opacity: 0.98;
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.4);
 }
 
 .spotify-button,
@@ -395,6 +390,7 @@ label:hover {
 #capture {
   margin: 26px auto 0;
   padding: clamp(18px, 4vw, 32px);
+  padding-bottom: clamp(38px, 6vw, 64px);
   border-radius: var(--radius-lg);
   border: 1px solid var(--stroke);
   box-shadow: var(--shadow-lg);
@@ -474,7 +470,7 @@ label:hover {
 #footer2,
 #footer3 {
   position: relative;
-  margin-top: 28px;
+  margin-top: 48px;
   width: 100%;
   height: auto;
 }
