@@ -99,7 +99,7 @@ mixtape-me/
 
 ## 🌐 Live Demo
 
-Visit [https://mixtape-me.herokuapp.com](https://mixtape-me.herokuapp.com) to access the live web application.
+Visit [https://https://mixtape-me.vercel.app](https://https://mixtape-me.vercel.app) to access the live web application.
 
 ## 🔐 Privacy
 

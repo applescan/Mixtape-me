@@ -2,7 +2,7 @@
   "meta": {
     "title": "Mixtape-me",
     "description": "Mixtape-me aims to recreate the experience of walking through the doors of a record store looking at CD covers and store walls with colourful albums, memorabilia, and photos, transferring the same experience in a digital form and sharing your mixtape with your friends! Using Spotify's technology, it has never been easier to find out who you listen to the most all year round, last 6 months or even this year. It is a web application built by Felicia Fel.",
-    "ogUrl": "https://mixtape-me.herokuapp.com/",
+    "ogUrl": "https://https://mixtape-me.vercel.app/",
     "ogType": "website",
     "ogTitle": "Mixtape-me",
     "ogImage": "/images/thumbnail.png"
@@ -40,7 +40,7 @@
     "portfolioUrl": "https://felicia-portfolio.netlify.app/"
   },
   "footer": {
-    "copyright": "mixtape-me.herokuapp.com | © 2023 🛸",
+    "copyright": "https://mixtape-me.vercel.app | © 2023 🛸",
     "creator": "Created by",
     "portfolioUrl": "https://felicia-portfolio.netlify.app/",
     "portfolioLabel": "Felicia Fel"
