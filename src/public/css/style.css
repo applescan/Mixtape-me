@@ -431,7 +431,7 @@ label:hover {
   position: absolute;
   inset: 0;
   background-image: url("/images/case.png");
-  background-size: 100% 100%;
+  background-size: 115% 110%;
   background-position: center;
   opacity: 0.2;
   border-radius: 8px;
