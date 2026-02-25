@@ -267,7 +267,6 @@ a:focus {
   padding: 18px 16px 6px;
   border-radius: var(--radius-md);
   background: var(--bg-card);
-  border: 1px solid var(--stroke);
   box-shadow: var(--shadow-sm);
   text-align: center;
   grid-column: span 2;
@@ -311,14 +310,14 @@ a:focus {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/cd.png");
+  background-image: url("/case.png");
   background-size: 100% 100%;
   background-position: center;
   opacity: 0.2;
   border-radius: 8px;
   z-index: 2;
   pointer-events: none;
-  transform: translateX(-4px);
+  transform: translate(10px, 8px);
 }
 
 .img2 {
@@ -329,11 +328,10 @@ a:focus {
   opacity: 0.98;
   box-shadow:
     0 12px 26px rgba(0, 0, 0, 0.35);
-  outline: 1px solid rgba(255, 255, 255, 0.12);
   position: relative;
   z-index: 1;
   display: block;
-  transform: translateX(-4px);
+  transform: translate(10px, 8px);
 }
 
 .album-placeholder {
@@ -343,7 +341,6 @@ a:focus {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(125, 249, 255, 0.1));
   box-shadow:
     0 12px 26px rgba(0, 0, 0, 0.35);
-  outline: 1px solid rgba(255, 255, 255, 0.12);
   position: relative;
   z-index: 1;
 }
@@ -462,7 +459,6 @@ label:hover {
 
 #capture .cd {
   background: rgba(10, 14, 26, 0.82);
-  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 @media (prefers-color-scheme: light) {
@@ -472,7 +468,6 @@ label:hover {
 
   #capture .cd {
     background: rgba(255, 255, 255, 0.95);
-    border: 1px solid rgba(8, 12, 28, 0.1);
   }
 }
 
