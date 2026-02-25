@@ -311,13 +311,14 @@ a:focus {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: var(--album-image);
-  background-size: cover;
+  background-image: url("/images/cd.png");
+  background-size: 100% 100%;
   background-position: center;
   opacity: 0.2;
   border-radius: 8px;
   z-index: 2;
   pointer-events: none;
+  transform: translateX(-4px);
 }
 
 .img2 {
@@ -332,6 +333,7 @@ a:focus {
   position: relative;
   z-index: 1;
   display: block;
+  transform: translateX(-4px);
 }
 
 .spotify-button,
