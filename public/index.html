@@ -347,10 +347,8 @@
       songsShortTerm.map(function (songShortTerm) {
         var list = `
           <div class="cd">
-          <div class="frame">
-          <a target="_blank" href="${songShortTerm.external_urls.spotify}">
+          <a class="album-link" style="--album-image: url('${songShortTerm.album.images[1].url}');" target="_blank" href="${songShortTerm.external_urls.spotify}">
           <img class="img2" src="${songShortTerm.album.images[1].url}"></a>
-          </div>
 
           <br>
 
@@ -374,10 +372,8 @@
       songsMediumTerm.map(function (songMediumTerm) {
         var list = `
           <div class="cd">
-          <div class="frame">
-          <a target="_blank" href="${songMediumTerm.external_urls.spotify}">
+          <a class="album-link" style="--album-image: url('${songMediumTerm.album.images[1].url}');" target="_blank" href="${songMediumTerm.external_urls.spotify}">
           <img class="img2" src="${songMediumTerm.album.images[1].url}"></a>
-          </div>
 
           <br>
 
@@ -401,10 +397,8 @@
       songsLongTerm.map(function (songLongTerm) {
         var list = `
           <div class="cd">
-          <div class="frame">
-          <a target="_blank" href="${songLongTerm.external_urls.spotify}">
+          <a class="album-link" style="--album-image: url('${songLongTerm.album.images[1].url}');" target="_blank" href="${songLongTerm.external_urls.spotify}">
           <img class="img2" src="${songLongTerm.album.images[1].url}"></a>
-          </div>
 
           <br>
 

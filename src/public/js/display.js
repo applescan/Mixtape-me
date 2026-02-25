@@ -8,10 +8,11 @@
  */
 function mapOverSongsShortTerm(songsShortTerm) {
   songsShortTerm.map(function(songShortTerm) {
+    const albumUrl = songShortTerm.album.images[1].url;
     const list = `
       <div class="cd">
-        <a class="album-link" target="_blank" href="${songShortTerm.external_urls.spotify}"> 
-          <img class="img2" src="${songShortTerm.album.images[1].url}">
+        <a class="album-link" style="--album-image: url('${albumUrl}');" target="_blank" href="${songShortTerm.external_urls.spotify}"> 
+          <img class="img2" src="${albumUrl}">
         </a>
 
         <br>
@@ -38,10 +39,11 @@ function mapOverSongsShortTerm(songsShortTerm) {
  */
 function mapOverSongsMediumTerm(songsMediumTerm) {
   songsMediumTerm.map(function(songMediumTerm) {
+    const albumUrl = songMediumTerm.album.images[1].url;
     const list = `
       <div class="cd">
-        <a class="album-link" target="_blank" href="${songMediumTerm.external_urls.spotify}"> 
-          <img class="img2" src="${songMediumTerm.album.images[1].url}">
+        <a class="album-link" style="--album-image: url('${albumUrl}');" target="_blank" href="${songMediumTerm.external_urls.spotify}"> 
+          <img class="img2" src="${albumUrl}">
         </a>
 
         <br>
@@ -68,10 +70,11 @@ function mapOverSongsMediumTerm(songsMediumTerm) {
  */
 function mapOverSongsLongTerm(songsLongTerm) {
   songsLongTerm.map(function(songLongTerm) {
+    const albumUrl = songLongTerm.album.images[1].url;
     const list = `
       <div class="cd">
-        <a class="album-link" target="_blank" href="${songLongTerm.external_urls.spotify}"> 
-          <img class="img2" src="${songLongTerm.album.images[1].url}">
+        <a class="album-link" style="--album-image: url('${albumUrl}');" target="_blank" href="${songLongTerm.external_urls.spotify}"> 
+          <img class="img2" src="${albumUrl}">
         </a>
 
         <br>
