@@ -274,18 +274,19 @@ a:focus {
 }
 
 .album-link {
-  width: 250px;
-  height: 250px;
+  width: 260px;
+  height: 260px;
   margin: 0 auto 8px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-image: url("/images/cd.webp");
-  background-size: contain;
+  background-image: url("/images/cd.png");
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
   transition: transform 0.25s ease;
+  position: relative;
 }
 
 .album-link:hover {
@@ -293,8 +294,8 @@ a:focus {
 }
 
 .img2 {
-  width: 68%;
-  height: 68%;
+  width: 64%;
+  height: 64%;
   border-radius: 50%;
   object-fit: cover;
   opacity: 0.98;
@@ -303,8 +304,8 @@ a:focus {
     inset 0 0 24px rgba(0, 0, 0, 0.35),
     0 12px 26px rgba(0, 0, 0, 0.4);
   outline: 1px solid rgba(255, 255, 255, 0.14);
-  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 0 52%, transparent 53%);
-  mask-image: radial-gradient(circle at 50% 50%, #000 0 52%, transparent 53%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 0 48%, transparent 49%);
+  mask-image: radial-gradient(circle at 50% 50%, #000 0 48%, transparent 49%);
 }
 
 .spotify-button,
@@ -503,8 +504,8 @@ label:hover {
   }
 
   .album-link {
-    width: 210px;
-    height: 210px;
+    width: 220px;
+    height: 220px;
   }
 }
 
@@ -546,8 +547,8 @@ label:hover {
   }
 
   .album-link {
-    width: 170px;
-    height: 170px;
+    width: 180px;
+    height: 180px;
   }
 
   p {
@@ -555,8 +556,8 @@ label:hover {
   }
 
   .img2 {
-    width: 70%;
-    height: 70%;
+    width: 66%;
+    height: 66%;
   }
 
   .cd {
