@@ -9,6 +9,19 @@ function spotifyLogout() {
 document.getElementById('screenshotButton').addEventListener('click', () => {
   const capture = document.getElementById('capture');
   capture.classList.add('capture-saving');
+  const albumLinks = capture.querySelectorAll('.album-link');
+  albumLinks.forEach((albumLink) => {
+    if (!albumLink.querySelector('.case-base')) {
+      const caseBase = document.createElement('span');
+      caseBase.className = 'case-base';
+      albumLink.appendChild(caseBase);
+    }
+    if (!albumLink.querySelector('.case-overlay')) {
+      const caseOverlay = document.createElement('span');
+      caseOverlay.className = 'case-overlay';
+      albumLink.appendChild(caseOverlay);
+    }
+  });
   domtoimage.toPng(capture)
     .then(function (dataUrl) {
       let link = document.createElement('a');
@@ -20,6 +33,11 @@ document.getElementById('screenshotButton').addEventListener('click', () => {
         console.error('oops, something went wrong!', error);
     })
     .finally(function() {
+      albumLinks.forEach((albumLink) => {
+        albumLink.querySelectorAll('.case-base, .case-overlay').forEach((node) => {
+          node.remove();
+        });
+      });
       capture.classList.remove('capture-saving');
     });
 });

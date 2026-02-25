@@ -411,6 +411,35 @@ label:hover {
   background-color: var(--bg-deep);
 }
 
+#capture.capture-saving .album-link .case-base {
+  position: absolute;
+  width: 115%;
+  height: 110%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -48%);
+  background-image: url("/images/case.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0;
+  filter: drop-shadow(0 14px 26px rgba(0, 0, 0, 0.45));
+  pointer-events: none;
+}
+
+#capture.capture-saving .album-link .case-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/case.png");
+  background-size: 100% 100%;
+  background-position: center;
+  opacity: 0.2;
+  border-radius: 8px;
+  z-index: 2;
+  pointer-events: none;
+  transform: translate(10px, 8px);
+}
+
 #capture h2 {
   margin-top: 6px;
   margin-bottom: 10px;
