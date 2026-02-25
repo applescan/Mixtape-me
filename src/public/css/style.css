@@ -265,9 +265,6 @@ a:focus {
   width: min(280px, 90vw);
   margin: 0 auto;
   padding: 18px 16px 6px;
-  border-radius: var(--radius-md);
-  background: var(--bg-card);
-  box-shadow: var(--shadow-sm);
   text-align: center;
   grid-column: span 2;
 }
@@ -293,8 +290,8 @@ a:focus {
 .album-link::before {
   content: "";
   position: absolute;
-  width: 112%;
-  height: 112%;
+  width: 115%;
+  height: 110%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -48%);
@@ -323,7 +320,6 @@ a:focus {
 .img2 {
   width: 100%;
   height: 100%;
-  border-radius: 8px;
   object-fit: cover;
   opacity: 0.98;
   box-shadow:
@@ -331,7 +327,7 @@ a:focus {
   position: relative;
   z-index: 1;
   display: block;
-  transform: translate(10px, 8px);
+  transform: translate(14px, 8px);
 }
 
 .spotify-button,
@@ -420,10 +416,6 @@ label:hover {
 #capture {
   margin: 26px auto 0;
   padding: clamp(18px, 4vw, 32px);
-  padding-bottom: clamp(38px, 6vw, 64px);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  background: linear-gradient(160deg, rgba(10, 14, 26, 0.85), rgba(8, 10, 20, 0.7));
   background-size: cover;
   background-position: center;
   position: relative;
@@ -437,10 +429,6 @@ label:hover {
 
 #capture p {
   color: var(--text-primary);
-}
-
-#capture .cd {
-  background: rgba(10, 14, 26, 0.82);
 }
 
 @media (prefers-color-scheme: light) {
