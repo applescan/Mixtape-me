@@ -20,30 +20,6 @@
   --radius-sm: 14px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg-ink: #f7f8fb;
-    --bg-deep: #eef1f7;
-    --bg-glass: rgba(255, 255, 255, 0.8);
-    --bg-card: rgba(255, 255, 255, 0.92);
-    --stroke: rgba(8, 12, 28, 0.08);
-    --stroke-strong: rgba(8, 12, 28, 0.16);
-    --text-primary: #0c0f1a;
-    --text-muted: rgba(12, 15, 26, 0.68);
-    --accent: #10a6ff;
-    --accent-strong: #3dd8a9;
-    --accent-warm: #ff6bb5;
-    --shadow-lg: 0 30px 70px rgba(16, 24, 40, 0.18);
-    --shadow-md: 0 18px 40px rgba(16, 24, 40, 0.14);
-    --shadow-sm: 0 10px 24px rgba(16, 24, 40, 0.12);
-  }
-
-  body {
-    background-image: radial-gradient(circle at top, rgba(16, 166, 255, 0.18), transparent 48%),
-      radial-gradient(circle at 20% 20%, rgba(255, 107, 181, 0.18), transparent 40%),
-      linear-gradient(160deg, rgba(247, 248, 251, 0.96), rgba(238, 241, 247, 0.96));
-  }
-}
 
 *,
 *::before,
@@ -269,6 +245,10 @@ a:focus {
   grid-column: span 2;
 }
 
+.cd > div {
+  padding-top: 14px;
+}
+
 .album-link {
   width: 240px;
   height: 240px;
@@ -431,15 +411,6 @@ label:hover {
   color: var(--text-primary);
 }
 
-@media (prefers-color-scheme: light) {
-  #capture {
-    background: linear-gradient(160deg, rgba(255, 255, 255, 0.92), rgba(244, 247, 255, 0.9));
-  }
-
-  #capture .cd {
-    background: rgba(255, 255, 255, 0.95);
-  }
-}
 
 .tracks {
   display: block;
