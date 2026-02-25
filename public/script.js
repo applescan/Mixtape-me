@@ -7,7 +7,9 @@ function spotifyLogout() {
 
 // Added event listener to "downloadButton"
 document.getElementById('screenshotButton').addEventListener('click', () => {
-  domtoimage.toPng(document.getElementById('capture'))
+  const capture = document.getElementById('capture');
+  capture.classList.add('capture-saving');
+  domtoimage.toPng(capture)
     .then(function (dataUrl) {
       let link = document.createElement('a');
       link.download = 'Mixtape-me.png';
@@ -16,5 +18,8 @@ document.getElementById('screenshotButton').addEventListener('click', () => {
     })
     .catch(function (error) {
         console.error('oops, something went wrong!', error);
+    })
+    .finally(function() {
+      capture.classList.remove('capture-saving');
     });
 });

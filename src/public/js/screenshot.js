@@ -6,8 +6,10 @@
 function initializeScreenshot() {
   // Add event listener to screenshot button
   document.getElementById('screenshotButton').addEventListener('click', function() {
+    const capture = document.getElementById('capture');
+    capture.classList.add('capture-saving');
     // Convert the specified DOM node to a PNG image
-    domtoimage.toPng(document.getElementById('capture'))
+    domtoimage.toPng(capture)
       .then(function(dataUrl) {
         // Create a download link and trigger the download
         let link = document.createElement('a');
@@ -17,6 +19,9 @@ function initializeScreenshot() {
       })
       .catch(function(error) {
         console.error('Screenshot error:', error);
+      })
+      .finally(function() {
+        capture.classList.remove('capture-saving');
       });
   });
 }
