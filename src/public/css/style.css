@@ -548,11 +548,11 @@ label:hover {
   }
 
   .album-link::after {
-    transform: translate(6px, 5px);
+    transform: translate(-60px, -55px);
   }
 
   .img2 {
-    transform: translate(8px, 5px);
+    transform: translate(5px, 4px);
   }
 }
 
@@ -594,8 +594,8 @@ label:hover {
   }
 
   .album-link {
-    width: min(40vw, 110px);
-    height: min(40vw, 110px);
+    width: min(40vw, 105px);
+    height: min(40vw, 105px);
   }
 
   p {
