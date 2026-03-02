@@ -21,7 +21,6 @@ function getTopTracksShortTerm(accessToken) {
       topTracksShortTerm = response;
       const songsShortTerm = topTracksShortTerm.items;
       
-      console.log(songsShortTerm);
       sessionStorage.setItem('songsShortTerm', JSON.stringify(songsShortTerm));
       mapOverSongsShortTerm(songsShortTerm);
     }
@@ -42,7 +41,6 @@ function getTopTracksMediumTerm(accessToken) {
       topTracksMediumTerm = response;
       const songsMediumTerm = topTracksMediumTerm.items;
       
-      console.log(songsMediumTerm);
       sessionStorage.setItem('songsMediumTerm', JSON.stringify(songsMediumTerm));
       mapOverSongsMediumTerm(songsMediumTerm);
     }
@@ -63,7 +61,7 @@ function getTopTracksLongTerm(accessToken) {
       topTracksLongTerm = response;
       const songsLongTerm = topTracksLongTerm.items;
       
-      console.log(songsLongTerm);
+
       sessionStorage.setItem('songsLongTerm', JSON.stringify(songsLongTerm));
       mapOverSongsLongTerm(songsLongTerm);
     }

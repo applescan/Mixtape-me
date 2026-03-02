@@ -265,21 +265,18 @@
           var songsShortTerm = JSON.parse(
             sessionStorage.getItem("songsShortTerm")
           );
-          console.log(songsShortTerm);
         }
 
         if (sessionStorage.getItem("songsMediumTerm") != null) {
           var songsMediumTerm = JSON.parse(
             sessionStorage.getItem("songsMediumTerm")
           );
-          console.log(songsMediumTerm);
         }
 
         if (sessionStorage.getItem("songsLongTerm") != null) {
           var songsLongTerm = JSON.parse(
             sessionStorage.getItem("songsLongTerm")
           );
-          console.log(songsLongTerm);
         }
       }
     })();
@@ -295,7 +292,6 @@
           topTracksShortTerm = response;
 
           var songsShortTerm = topTracksShortTerm.items;
-          console.log(songsShortTerm);
           sessionStorage.setItem(
             "songsShortTerm",
             JSON.stringify(songsShortTerm)
@@ -315,7 +311,6 @@
           topTracksMediumTerm = response;
 
           var songsMediumTerm = topTracksMediumTerm.items;
-          console.log(songsMediumTerm);
           sessionStorage.setItem(
             "songsMediumTerm",
             JSON.stringify(songsMediumTerm)
@@ -335,7 +330,6 @@
           topTracksLongTerm = response;
 
           var songsLongTerm = topTracksLongTerm.items;
-          console.log(songsLongTerm);
           sessionStorage.setItem(
             "songsLongTerm",
             JSON.stringify(songsLongTerm)

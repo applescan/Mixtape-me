@@ -5,7 +5,6 @@
 
 // Initialize event listeners once the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('Mixtape-me application initialized');
 
   const logoutLinks = document.querySelectorAll('[data-spotify-logout]');
   if (!logoutLinks.length) {

@@ -8,11 +8,11 @@ function getHashParams() {
   let e;
   const r = /([^&;=]+)=?([^&;]*)/g;
   const q = window.location.hash.substring(1);
-  
+
   while ((e = r.exec(q))) {
     hashParams[e[1]] = decodeURIComponent(e[2]);
   }
-  
+
   return hashParams;
 }
 
@@ -48,7 +48,7 @@ function handleAuth() {
 
           $('#login').hide();
           $('#loggedin').show();
-          
+
           // Fetch top tracks from Spotify API
           getTopTracksShortTerm(accessToken);
           getTopTracksMediumTerm(accessToken);
@@ -70,17 +70,14 @@ function handleAuth() {
 function retrieveCachedSongs() {
   if (sessionStorage.getItem('songsShortTerm') !== null) {
     const songsShortTerm = JSON.parse(sessionStorage.getItem('songsShortTerm'));
-    console.log(songsShortTerm);
   }
 
   if (sessionStorage.getItem('songsMediumTerm') !== null) {
     const songsMediumTerm = JSON.parse(sessionStorage.getItem('songsMediumTerm'));
-    console.log(songsMediumTerm);
   }
 
   if (sessionStorage.getItem('songsLongTerm') !== null) {
     const songsLongTerm = JSON.parse(sessionStorage.getItem('songsLongTerm'));
-    console.log(songsLongTerm);
   }
 }
 
@@ -88,7 +85,7 @@ function retrieveCachedSongs() {
 function spotifyLogout() {
   const spotifyLogoutWindow = window.open(
     'https://accounts.spotify.com/en/logout',
-    'Spotify Logout', 
+    'Spotify Logout',
     'width=700,height=500,top=40,left=40'
   );
   setTimeout(() => spotifyLogoutWindow.close(), 2000);

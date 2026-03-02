@@ -71,7 +71,6 @@ exports.callback = (req, res) => {
         };
 
         request.get(options, (error, response, body) => {
-          console.log(body);
         });
 
         // Pass the token to the browser to make requests from there
