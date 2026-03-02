@@ -505,11 +505,19 @@ label:hover {
   #top-tracks-MediumTerm,
   #top-tracks-LongTerm {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
   }
 
   .cd {
     grid-column: span 1;
     width: 100%;
+  }
+
+  #top-tracks-ShortTerm .cd:nth-last-child(1):nth-child(odd),
+  #top-tracks-MediumTerm .cd:nth-last-child(1):nth-child(odd),
+  #top-tracks-LongTerm .cd:nth-last-child(1):nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
   }
 
   .navbar-brand img.logo {
@@ -531,6 +539,20 @@ label:hover {
   .album-link {
     width: min(44vw, 200px);
     height: min(44vw, 200px);
+  }
+
+  .album-link::before,
+  .album-link::after {
+    width: 108%;
+    height: 104%;
+  }
+
+  .album-link::after {
+    transform: translate(6px, 5px);
+  }
+
+  .img2 {
+    transform: translate(8px, 5px);
   }
 }
 
@@ -572,8 +594,8 @@ label:hover {
   }
 
   .album-link {
-    width: min(40vw, 160px);
-    height: min(40vw, 160px);
+    width: min(40vw, 110px);
+    height: min(40vw, 110px);
   }
 
   p {
