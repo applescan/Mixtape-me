@@ -4,6 +4,27 @@ function spotifyLogout() {
   setTimeout(function () { spotifyLogoutWindow.close() }, 2000);
 }
 
+document.querySelectorAll('[data-spotify-logout]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const spotifyLogoutWindow = window.open(
+      'https://accounts.spotify.com/en/logout',
+      'Spotify Logout',
+      'width=700,height=500,top=40,left=40'
+    );
+
+    if (!spotifyLogoutWindow) {
+      window.location.href = 'https://accounts.spotify.com/en/logout';
+      return;
+    }
+
+    setTimeout(() => spotifyLogoutWindow.close(), 2000);
+    sessionStorage.removeItem('songsShortTerm');
+    sessionStorage.removeItem('songsMediumTerm');
+    sessionStorage.removeItem('songsLongTerm');
+  });
+});
+
 
 // Added event listener to "downloadButton"
 document.getElementById('screenshotButton').addEventListener('click', () => {

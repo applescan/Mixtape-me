@@ -48,6 +48,7 @@
   "nav": {
     "privacy": "Privacy Policy",
     "contact": "Contact",
-    "about": "About"
+    "about": "About",
+    "logout": "Logout"
   }
 }
