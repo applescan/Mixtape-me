@@ -22,15 +22,17 @@ document.addEventListener('DOMContentLoaded', function() {
         'width=700,height=500,top=40,left=40'
       );
 
-      if (!spotifyLogoutWindow) {
-        window.location.href = 'https://accounts.spotify.com/en/logout';
-        return;
+      if (spotifyLogoutWindow) {
+        setTimeout(() => spotifyLogoutWindow.close(), 2000);
       }
 
-      setTimeout(() => spotifyLogoutWindow.close(), 2000);
       sessionStorage.removeItem('songsShortTerm');
       sessionStorage.removeItem('songsMediumTerm');
       sessionStorage.removeItem('songsLongTerm');
+
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 2100);
     });
   });
 });

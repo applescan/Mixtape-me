@@ -547,8 +547,8 @@ label:hover {
   }
 
   .album-link {
-    width: 220px;
-    height: 220px;
+    width: min(44vw, 200px);
+    height: min(44vw, 200px);
   }
 }
 
@@ -590,8 +590,8 @@ label:hover {
   }
 
   .album-link {
-    width: 180px;
-    height: 180px;
+    width: min(40vw, 160px);
+    height: min(40vw, 160px);
   }
 
   p {
