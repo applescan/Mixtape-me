@@ -401,6 +401,7 @@ label:hover {
 #capture {
   margin: 26px auto 0;
   padding: clamp(18px, 4vw, 32px);
+  box-sizing: border-box;
   background-size: cover;
   background-position: center;
   position: relative;

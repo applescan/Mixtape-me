@@ -7,6 +7,7 @@ function initializeScreenshot() {
   // Add event listener to screenshot button
   document.getElementById('screenshotButton').addEventListener('click', function() {
     const capture = document.getElementById('capture');
+    const restoreMobileSizing = applyMobileCaptureSizing(capture);
     capture.classList.add('capture-saving');
     const albumLinks = capture.querySelectorAll('.album-link');
     albumLinks.forEach(function(albumLink) {
@@ -39,9 +40,41 @@ function initializeScreenshot() {
             node.remove();
           });
         });
+        if (restoreMobileSizing) {
+          restoreMobileSizing();
+        }
         capture.classList.remove('capture-saving');
       });
   });
+}
+
+function applyMobileCaptureSizing(capture) {
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  if (!isMobile) {
+    return null;
+  }
+  const original = {
+    width: capture.style.width,
+    height: capture.style.height,
+    minHeight: capture.style.minHeight,
+    maxWidth: capture.style.maxWidth,
+    marginLeft: capture.style.marginLeft,
+    marginRight: capture.style.marginRight,
+  };
+  capture.style.width = `${window.innerWidth}px`;
+  capture.style.height = `${window.innerHeight}px`;
+  capture.style.minHeight = `${window.innerHeight}px`;
+  capture.style.maxWidth = `${window.innerWidth}px`;
+  capture.style.marginLeft = '0';
+  capture.style.marginRight = '0';
+  return function restore() {
+    capture.style.width = original.width;
+    capture.style.height = original.height;
+    capture.style.minHeight = original.minHeight;
+    capture.style.maxWidth = original.maxWidth;
+    capture.style.marginLeft = original.marginLeft;
+    capture.style.marginRight = original.marginRight;
+  };
 }
 
 // Initialize screenshot functionality when the DOM is loaded
