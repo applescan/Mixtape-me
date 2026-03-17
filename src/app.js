@@ -28,6 +28,7 @@ app.set('views', path.join(__dirname, 'views/templates'));
 // Configure middleware
 app
   .use(express.static(path.join(__dirname, 'public')))
+  .use('/vendor/html-to-image', express.static(path.join(__dirname, '../node_modules/html-to-image/dist')))
   .use(cors())
   .use(cookieParser());
 

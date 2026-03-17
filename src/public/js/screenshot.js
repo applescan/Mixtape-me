@@ -7,7 +7,6 @@ function initializeScreenshot() {
   // Add event listener to screenshot button
   document.getElementById('screenshotButton').addEventListener('click', function() {
     const capture = document.getElementById('capture');
-    const restoreMobileSizing = applyMobileCaptureSizing(capture);
     capture.classList.add('capture-saving');
     const albumLinks = capture.querySelectorAll('.album-link');
     albumLinks.forEach(function(albumLink) {
@@ -27,10 +26,14 @@ function initializeScreenshot() {
         const captureWidth = Math.ceil(Math.max(capture.scrollWidth, capture.offsetWidth));
         const captureHeight = Math.ceil(Math.max(capture.scrollHeight, capture.offsetHeight));
 
-        // Convert the specified DOM node to a PNG image using the full rendered size.
-        return domtoimage.toPng(capture, {
+        // Use a single capture path for every device to avoid mobile-specific clipping.
+        return window.htmlToImage.toPng(capture, {
+          cacheBust: true,
+          pixelRatio: 1,
           width: captureWidth,
           height: captureHeight,
+          canvasWidth: captureWidth,
+          canvasHeight: captureHeight,
           style: {
             width: `${captureWidth}px`,
             height: `${captureHeight}px`,
@@ -53,41 +56,9 @@ function initializeScreenshot() {
             node.remove();
           });
         });
-        if (restoreMobileSizing) {
-          restoreMobileSizing();
-        }
         capture.classList.remove('capture-saving');
       });
   });
-}
-
-function applyMobileCaptureSizing(capture) {
-  const isMobile = window.matchMedia('(max-width: 768px)').matches;
-  if (!isMobile) {
-    return null;
-  }
-  const original = {
-    width: capture.style.width,
-    height: capture.style.height,
-    minHeight: capture.style.minHeight,
-    maxWidth: capture.style.maxWidth,
-    marginLeft: capture.style.marginLeft,
-    marginRight: capture.style.marginRight,
-  };
-  capture.style.width = `${window.innerWidth}px`;
-  capture.style.height = 'auto';
-  capture.style.minHeight = '0';
-  capture.style.maxWidth = `${window.innerWidth}px`;
-  capture.style.marginLeft = '0';
-  capture.style.marginRight = '0';
-  return function restore() {
-    capture.style.width = original.width;
-    capture.style.height = original.height;
-    capture.style.minHeight = original.minHeight;
-    capture.style.maxWidth = original.maxWidth;
-    capture.style.marginLeft = original.marginLeft;
-    capture.style.marginRight = original.marginRight;
-  };
 }
 
 function waitForCaptureLayout() {

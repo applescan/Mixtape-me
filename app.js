@@ -44,6 +44,7 @@ var app = express();
 
 app
   .use(express.static(__dirname + "/public"))
+  .use("/vendor/html-to-image", express.static(__dirname + "/node_modules/html-to-image/dist"))
   .use(cors())
   .use(cookieParser());
 
