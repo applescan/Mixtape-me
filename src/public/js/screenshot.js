@@ -22,8 +22,21 @@ function initializeScreenshot() {
         albumLink.appendChild(caseOverlay);
       }
     });
-    // Convert the specified DOM node to a PNG image
-    domtoimage.toPng(capture)
+    waitForCaptureLayout()
+      .then(function() {
+        const captureWidth = Math.ceil(Math.max(capture.scrollWidth, capture.offsetWidth));
+        const captureHeight = Math.ceil(Math.max(capture.scrollHeight, capture.offsetHeight));
+
+        // Convert the specified DOM node to a PNG image using the full rendered size.
+        return domtoimage.toPng(capture, {
+          width: captureWidth,
+          height: captureHeight,
+          style: {
+            width: `${captureWidth}px`,
+            height: `${captureHeight}px`,
+          },
+        });
+      })
       .then(function(dataUrl) {
         // Create a download link and trigger the download
         let link = document.createElement('a');
@@ -62,8 +75,8 @@ function applyMobileCaptureSizing(capture) {
     marginRight: capture.style.marginRight,
   };
   capture.style.width = `${window.innerWidth}px`;
-  capture.style.height = `${window.innerHeight}px`;
-  capture.style.minHeight = `${window.innerHeight}px`;
+  capture.style.height = 'auto';
+  capture.style.minHeight = '0';
   capture.style.maxWidth = `${window.innerWidth}px`;
   capture.style.marginLeft = '0';
   capture.style.marginRight = '0';
@@ -75,6 +88,14 @@ function applyMobileCaptureSizing(capture) {
     capture.style.marginLeft = original.marginLeft;
     capture.style.marginRight = original.marginRight;
   };
+}
+
+function waitForCaptureLayout() {
+  return new Promise(function(resolve) {
+    requestAnimationFrame(function() {
+      requestAnimationFrame(resolve);
+    });
+  });
 }
 
 // Initialize screenshot functionality when the DOM is loaded
